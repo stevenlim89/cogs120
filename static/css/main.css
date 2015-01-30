@@ -1,0 +1,93 @@
+*{
+  margin: 0 0 0 0;
+  border: 0 0 0 0;
+}
+
+html {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+body{
+  height: 100%;
+  width: 100%;
+}
+
+nav {
+  display: block;
+  position: fixed;
+  top: 0;
+  height: 100px;
+  width: 100%;
+  background-color: blue;
+  z-index: 80;
+}
+
+#search{
+  float: left;
+  height: 50px;
+  width: 70px;
+  background-color: white;
+  z-index: 100;
+  border-radius: 10px;
+}
+
+#writePost{
+  float: right;
+  height: 50px;
+  width: 70px;
+  background-color: white;
+  z-index: 100;
+  border-radius: 10px;
+}
+#navbar{
+  height:inherit;
+  text-align: center;
+  padding-top: 50px;
+  height: 100px;
+  width: 100%;
+}
+
+#mainTitle{
+  height: 100px;
+  width: 100px;
+}
+section{
+  position: relative;
+
+  top: 100px;
+  height: 100%;
+  width: 100%;
+  display:block;
+  z-index: 70;
+  opacity: 0.6;
+}
+
+div.choiceButtons{
+  display: inline-block;
+  text-align: center;
+  height: 200px;
+  width: 200px;
+  border-width: 5px;
+  margin: 20px 20px 20px 20px;
+  background-color: white;
+  border-radius: 100px;
+  transition: all 1s ease;
+
+}
+
+div.choiceButtons:hover{
+  height: 250px;
+  width: 250px;
+  border-radius: 125px;
+
+  cursor: pointer;
+  background-color: green;
+}
+#writePost:hover, #search:hover{
+  cursor: pointer;
+  background-color: green;
+}
+
+
