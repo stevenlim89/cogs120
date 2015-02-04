@@ -1,0 +1,27 @@
+.container{
+	position: relative;
+}
+
+.glyphicon.glyphicon-menu-hamburger{
+	font-size: 100px;
+	float: left;
+	position: relative;
+	top: 20px;
+	left: 20px;
+}
+.dropdown-menu{
+	top: -10px;
+}
+.glyphicon.glyphicon-calendar{
+	font-size: 100px;
+	float: right;
+	position: relative;
+	top: 20px;
+	right: 20px;
+	z-index: 50;
+}
+
+.title{
+	font-size: 100px;
+	position: relative;
+}
