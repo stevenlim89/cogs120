@@ -3,7 +3,7 @@
 }
 
 .glyphicon.glyphicon-menu-hamburger{
-	font-size: 50%;
+	font-size: 200%;
 	float: left;
 	position: relative;
 	top: 20px;
@@ -13,7 +13,7 @@
 	top: -10px;
 }
 .glyphicon.glyphicon-calendar{
-	font-size: 50%;
+	font-size: 200%;
 	float: right;
 	position: relative;
 
@@ -22,6 +22,6 @@
 }
 
 .title{
-	font-size: 50%;
+	font-size: 200%;
 	position: relative;
 }
