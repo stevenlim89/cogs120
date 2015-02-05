@@ -25,3 +25,12 @@
 	font-size: 200%;
 	position: relative;
 }
+
+#day, #date, #month{
+	text-align: center;
+}
+
+.listviews{
+	font-size: 100%;
+	text-align: center;
+}
