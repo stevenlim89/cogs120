@@ -1,11 +1,7 @@
-'use strict';
 $(document).ready(function() {
-	initializePage();
-})
+	$('#calendar').clndr({
+  		template: $('#cal-template').html()
+	});
+});
 
-/*
- * Function that is called when the document is ready.
- */
-function initializePage() {
-	console.log("Javascript connected!");
-}
+
