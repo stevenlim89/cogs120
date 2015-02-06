@@ -8,21 +8,23 @@
 }
 .title{
 	position: relative;
+	text-decoration: none;
 }
 
-.glyphicon.glyphicon-menu-hamburger{
+.glyphicon.glyphicon-envelope{
 	font-size: 200%;
 	float: left;
 	position: relative;
 	top: 20px;
 	left: 20px;
+	z-index: 51;
 }
 
 .glyphicon.glyphicon-calendar{
 	font-size: 200%;
 	float: right;
 	position: relative;
-
+	top: 20px;
 	right: 20px;
 	z-index: 50;
 }
