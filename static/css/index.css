@@ -2,6 +2,14 @@
 	width: auto;
 }
 
+#first{
+	color: #FFFFFF;
+    background-color: #FF4D4D;
+}
+.title{
+	position: relative;
+}
+
 .glyphicon.glyphicon-menu-hamburger{
 	font-size: 200%;
 	float: left;
@@ -18,23 +26,18 @@
 	right: 20px;
 	z-index: 50;
 }
-.dropdown-toggle{
-	float: left;
-	position: relative;
 
-	left: 20px;
+.container > .navbar-custom{
+	color: #FFFFFF;
+    background-color: #6AC3FF;
 }
 
-.title{
-	font-size: 200%;
+.glyphicon.glyphicon-pencil{
 	position: relative;
+	font-size: 150%;
+	top: 10px;
 }
 
 #day, #date, #month{
-	text-align: center;
-}
-
-.listviews{
-	font-size: 100%;
 	text-align: center;
 }

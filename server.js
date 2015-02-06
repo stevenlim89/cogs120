@@ -12,6 +12,7 @@ var handlebars = require('express3-handlebars');
 var index1 = require('./routes/index');
 var calendar1 = require('./routes/calendar');
 var notificationsScreen = require('./routes/notifications');
+var create_event = require('./routes/create_event');
 // Create the server instance
 var server = express();
 
@@ -44,6 +45,7 @@ if ('development' == server.get('env')) {
 server.get('/', index1.view);
 server.get('/calendar', calendar1.cal);
 server.get('/notifications', notificationsScreen.screenView);
+server.get('/createEvent', create_event.create);
 // Start the server
 http.createServer(server).listen(server.get('port'), function(){
   console.log('Express server listening on port ' + server.get('port'));

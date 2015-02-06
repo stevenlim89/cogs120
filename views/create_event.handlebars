@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Gruupers</title>
+    <title>Create Event</title>
     <link href="css/index.css" rel="stylesheet"></link>
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet"></link>
     <link href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" rel="stylesheet"></link>
@@ -26,34 +26,38 @@
       </a>
 
       <a href="/">
-        <span class="title" style="color:white">
-          <center><h1>Gruupster</h1></center>
-        </span>
-      </a>
+      <span class="title" style="color:white">
+        <center><h1>Gruupster</h1></center>
+      </span>
+    </a>
+
     </nav>  
   </div>
+  
+  <div class="container">
 
-  <div class="events">
-    <ul class="listviews" data-role="listview">
-      
-      <li data-role="list-divider">Invitation</li>
-        <li><a href="http://s3-ec.buzzfed.com/static/2015-02/1/22/enhanced/webdr11/enhanced-4865-1422847728-16.jpg">
-          <h2>Donna has invited you!</h2>
-          <p><strong>Let's go study. Attending with: Donna</strong></p>
-        </a></li>
-
-      <li data-role="list-divider">+1 more Gruuper</li>
-        <li><a href="http://s3-ec.buzzfed.com/static/2015-02/1/22/enhanced/webdr11/enhanced-4865-1422847728-16.jpg">
-          <h2>John accepted your invitation</h2>
-          <p><strong>John will join you at your studying event. Attending: Stewart, John, Scott, Albert</strong></p>
-        </a></li>
-
-    </ul>    
-  </div> 
-
-  <script src="https://code.jquery.com/jquery.js"></script>
+    <h2><center>Create Event</center></h2>
+    <form>
+        Location:<br>
+        <input type="text" name="location">
+        <br>
+        Description:<br>
+        <input type="text" name="description">
+        Date:<br>
+        <input type="text" name="date">
+        <br>
+        time:<br>
+        <input type="text" name="time">
+        <br>
+        <input type="submit" value="Submit">
+        <input type="submit" value="Cancel">
+    </form>
+  </div>
+ 
+ 	<script src="https://code.jquery.com/jquery.js"></script>
   <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
   <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
   <script src="bootstrap/js/bootstrap.js"></script>
 </body>
+
 </html>
