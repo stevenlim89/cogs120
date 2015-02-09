@@ -10,36 +10,17 @@
 </head>
 
 <body>
-  <div class="container">
-    <nav role="navigation" id="first" class="navbar navbar-custom navbar-static-top">
-      <a href="notifications">
-        <span class="glyphicon glyphicon-envelope" style="color:white"></span> 
-      </a>
-      <!--<li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-          <span class="glyphicon glyphicon-menu-hamburger" style="color:white"></span>   
-        </a>
-        <ul class="dropdown-menu" role="menu">
-            <li><a href="notifications" role="menuitem">Notifications</a></li>
-        </ul>
-      </li>-->
-      
-      <a href="calendar">
-        <span class="glyphicon glyphicon-calendar" style="color:white"></span> 
-      </a>
-
-      <a href="/">
-      <span class="title" style="color:white">
-        <center><h1>Gruupster</h1></center>
-      </span>
-    </a>
-
-    </nav>  
-  </div>
+    <!-- This is the bar that will be at every page -->
+    <div class="container">
+        <a href="#"><button type="button" id="Menu">Menu</button></a>
+        <a href="calendar"><button type="button" id="Calendar">Calendar</button></a>
+        <a href="/" id="title"><h1><center>Gruupster</center></h1></a>       
+    </div>
   
-  <div class="container">
+    <div class="container">
 
     <h2><center>Create Event</center></h2>
+    
     <form>
         Location:<br>
         <input type="text" name="location">

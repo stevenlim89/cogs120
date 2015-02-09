@@ -10,46 +10,30 @@
 </head>
 
 <body>
+
+  <!-- This is the bar that will be at every page -->
   <div class="container">
-    <nav role="navigation" id="first" class="navbar navbar-custom navbar-static-top">
-      <a href="notifications">
-        <span class="glyphicon glyphicon-envelope" style="color:white"></span> 
-      </a>
-      <!--<li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-          <span class="glyphicon glyphicon-menu-hamburger" style="color:white"></span>   
-        </a>
-        <ul class="dropdown-menu" role="menu">
-            <li><a href="/notifications" role="menuitem">Notifications</a></li>
-        </ul>
-      </li> -->
-
-      <a href="calendar">
-        <span class="glyphicon glyphicon-calendar" style="color:white"></span> 
-      </a>
-
-      <a href="/">
-      <span class="title" style="color:white">
-        <center><h1>Gruupster</h1></center>
-      </span>
-    </a>
-
-    </nav>  
+      <a href="#"><button type="button" id="Menu">Menu</button></a>          
+      <a href="calendar"><button type="button" id="Calendar">Calendar</button></a>
+      <a href="/" id="title"><h1><center>Gruupster</center></h1></a> 
+      <ul>
+          <li><a href="gruupers" class="list">Gruupers</a></li>
+          <li><a href="notifications" class="list">Notifications</a></li>
+          <li><a href="help" class="list">Help</a></li>
+      </ul>       
   </div>
 
-  <div class="container">
-     <nav role="navigation" class="navbar navbar-default navbar-custom navbar-static-top">
-      <a href="/createEvent"> 
-        <center><span class="glyphicon glyphicon-pencil" style="color:white"></span></center>
-      </a>
-    </nav>
-  </div>
-
+  <!-- This displays the date and month that is currently selected -->
   <div class="today">
       <div class="page-header">
         <h2 id="day"></h2>
-        <h1 id="month"></h1>
-        <h1 id="date"></h1>
+        <div class="arrowContainer">
+            <a href="#"><img id="arrowLeft" src="images/icon-ios7-arrow-back-128.png"></a>
+            <a href="#"><img id="arrowRight" src="images/icon-ios7-arrow-right-128.png"></a>
+            <h1 id="month"></h1>
+            
+        </div>    
+        <h1 id="date"></h1>        
           <script type="text/javascript">
             var names = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
             var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -60,50 +44,31 @@
           </script>
   </div>
 
+  <!-- This container has the buttons to go to creating an event or editing a user's schedule -->
+  <div class="container">
+      <div class="scheduling">
+          <a href="editSchedule"><button type="button" id="editSched">Edit Schedule</button></a> 
+          <a href="createEvent"><button type="button" id="createEvent">GroupUp Event</button></a>
+      </div>
+  </div>
+  
+  <!-- List view that has the events for that day -->
   <div class="events">
-    <ul class="listviews" data-role="listview">
-      
-      <li data-role="list-divider">February 7, 2015<span class="ui-li-count">+3</span></li>
-        <li><a href="http://s3-ec.buzzfed.com/static/2015-02/1/22/enhanced/webdr11/enhanced-4865-1422847728-16.jpg">
-          <h2>Spring Break!</h2>
-          <p><strong>Going to Thailand! Attending with: Jack, Bob, Anna</strong></p>
-        </a></li>
+      <ul class="listviews" data-role="listview">      
+          <li data-role="list-divider">February 7, 2015<span class="ui-li-count">+3</span></li>
+              <li><a href="http://s3-ec.buzzfed.com/static/2015-02/1/22/enhanced/webdr11/enhanced-4865-1422847728-16.jpg">
+                  <h2>Spring Break!</h2>
+                  <p><strong>Attending with: Jack, Bob, Anna</strong></p>
+              </a></li>
 
-      <li data-role="list-divider">February 6, 2015<span class="ui-li-count">+4</span></li>
-        <li><a href="http://s3-ec.buzzfed.com/static/2015-02/1/22/enhanced/webdr11/enhanced-4865-1422847728-16.jpg">
-          <h2>Surprise Kenny with a prank</h2>
-          <p><strong>Event will take place at Atkinson Hall. Attending: Stewart, Michael, Scott, Albert</strong></p>
-        </a></li>
-    </ul>    
+          <li data-role="list-divider">February 6, 2015<span class="ui-li-count">+4</span></li>
+              <li><a href="http://s3-ec.buzzfed.com/static/2015-02/1/22/enhanced/webdr11/enhanced-4865-1422847728-16.jpg">
+                  <h2>Surprise Kenny with a prank</h2>
+                  <p><strong>Event will take place at Atkinson Hall. Attending: Stewart, Michael, Scott, Albert</strong></p>
+              </a></li>
+      </ul>    
   </div>  
-    <!-- this is a comment in HTML -->
- <!-- First code turn in 
-  <nav>
-  	<div>
-	<div id="navbar">
-		<div id="search">
-  		Search 
-  		</div>
-  		<span id="mainTitle">Gruup Feed</span>
-  		<div id="writePost">
-  		Write Post [+]
-  		</div>
-  	</div>
-	</div>
-  </nav>
- 
- <section id="section1">
-	<div id="button1" class= "choiceButtons">
-  	Scheduling
-	</div>
-	<div id="button2" class= "choiceButtons">
-  	Friend's List
-	</div>
-	<div id="button3" class= "choiceButtons">
-  	My Schedul
-	</div>
-  </section> 
-  -->
+    
  	<script src="https://code.jquery.com/jquery.js"></script>
   <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
   <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>

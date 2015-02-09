@@ -6,11 +6,9 @@
 	text-decoration: none;
 	color: white;
 	background-color: #FF4D4D;
+
 }
-.list{
-	
-}
-#Menu, #editSched{
+#Menu{
 	width: 20%;
 	float: left;
 	background-color: #6AC3FF;
@@ -19,7 +17,7 @@
 	text-decoration: none;
 }
 
-#Calendar, #createEvent{
+#Calendar{
 	width: 20%;
 	float: right;
 	background-color: #6AC3FF;
@@ -28,18 +26,20 @@
 	text-decoration: none;
 }
 
-#day, #date, #month{
-	text-align: center;
-}
-
-#arrowLeft{
+#groups{
+	width: 50%;
 	float: left;
-	width: 5%;
-	height: 5%;
+	background-color: #6AC3FF;
+	color: white;
+	font: helvetica;
+	text-decoration: none;
 }
 
-#arrowRight{
+#friends{
+	width: 50%;
 	float: right;
-	width: 5%;
-	height: 5%;
-}
+	background-color: #6AC3FF;
+	color: white;
+	font: helvetica;
+	text-decoration: none;
+} 

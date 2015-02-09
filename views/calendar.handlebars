@@ -4,73 +4,77 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Gruupers</title>
-    <!--<link href="css/index.css" rel="stylesheet"></link> <link href="css/calendar.css" rel="stylesheet"></link>-->
-    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
+
+    <link href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" rel="stylesheet"></link>
+    <link href="fullcalendar/fullcalendar.css" rel="stylesheet"/>
+
+    <script src="fullcalendar/lib/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+ 
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="fullcalendar/lib/moment.min.js"></script> 
+    <script src="fullcalendar/fullcalendar.js"></script>
+
     <script type="text/javascript">
-    $(document).ready(function() {
 
-    // page is now ready, initialize the calendar...
+        $(document).ready(function() {
+            var date = new Date();
+            var d = date.getDate();
+            var m = date.getMonth();
+            var day = date.getDay();
 
-    $('#calendar1').fullCalendar({
-        // put your options and callbacks here
-    })
+            $('#calendar').fullCalendar({
+                // put your options and callbacks here
+                editable: true,
+                weekMode: 'liquid',
+                url: '#',
+                events: [
+                ],
+                aspectRatio: 2
+            })
 
-});</script>
+        });
+
+    </script>
+
+    <link href="css/calendar.css" rel="stylesheet"/>
 </head>
+
 <body>
+    <!-- This is the bar that will be at every page -->
+    <div class="container">
+      <a href="#"><button type="button" id="Menu">Menu</button></a>          
+      <a href="calendar"><button type="button" id="cal">Calendar</button></a>
+      <a href="/" id="title"><h1><center>Gruupster</center></h1></a> 
+      <ul>
+          <li><a href="gruupers" class="list">Gruupers</a></li>
+          <li><a href="notifications" class="list">Notifications</a></li>
+          <li><a href="help" class="list">Help</a></li>
+      </ul>       
+    </div>
 
-<!--
-  <div class="container">
-    <nav role="navigation" class="navbar navbar-inverse navbar-static-top">
-    <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-          <span class="glyphicon glyphicon-menu-hamburger" style="color:white"></span>  
-        </a>
-        <ul class="dropdown-menu" role="menu">
-            <li><a href="notifications" role="menuitem">Notifications</a></li>
-            <li><a href="notifications" role="menuitem">Notificationews</a></li>
-        </ul>  
-      </li>
-      <a href="calendar">
-        <span class="glyphicon glyphicon-calendar" style="color:white"></span> 
-      </a>
+    <hr>
 
-      <span class="title" style="color:white">
-        <center>GruupFeed</center>
-      </span>
+    <div id="calendar"></div>
+    
+    <div><hr></div>
 
-    </nav>  
-  </div>-->
+    <div class="event_list">
+        <ul class="listviews" data-role="listview">      
+            <li data-role="list-divider">LET me try this<span class="ui-li-count">+3</span></li>
+                <li><a href="http://s3-ec.buzzfed.com/static/2015-02/1/22/enhanced/webdr11/enhanced-4865-1422847728-16.jpg">
+                    <h2>Spring Break!</h2>
+                    <p><strong>Attending with: Jack, Bob, Anna</strong></p>
+                </a></li>
 
-<div id='calendar1'></div>
-<!--
-  <div id="calendar"></div>
-
-  <script id="cal-template" type="text/template">
-  	<div class="controls">
-  		<div class="clndr-previous-button">,</div>
-  		<div class="month"><%= month %></div>
-  		<div class="clndr-next-button">,</div>
-  	</div>
-  		
-  	<div class="days-container">
-  		<div class="days">
-  			<div class="headers">
-  				<% _.each(daysOfTheWeek, function(day) { %><div class="day-header"><%= day %></div><% }); %>
-  			</div>
-  			<% _.each(days, function(day) { %><div class="<%= day.classes %>" id="<%= day.id %>"><%= day.day %></div><% }); %>
-  		</div>
-  	</div>
-  </script>	 -->
-
-
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="bootstrap/js/bootstrap.js"></script>
-  <script src='fullcalendar/lib/jquery.min.js'></script>
-  <script src='fullcalendar/lib/moment.min.js'></script> 
-  <script src='fullcalendar/fullcalendar.js'></script>
-
+            <li data-role="list-divider">February 6, 2015<span class="ui-li-count">+4</span></li>
+                <li><a href="http://s3-ec.buzzfed.com/static/2015-02/1/22/enhanced/webdr11/enhanced-4865-1422847728-16.jpg">
+                    <h2>Surprise Kenny with a prank</h2>
+                    <p><strong>Event will take place at Atkinson Hall. Attending: Stewart, Michael, Scott, Albert</strong></p>
+                </a></li>
+        </ul>
+    </div>
+   
 </body>
 
 </html>
