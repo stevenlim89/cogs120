@@ -15,6 +15,11 @@ var notificationsScreen = require('./routes/notifications');
 var create_event = require('./routes/create_event');
 var gruupers_page = require('./routes/gruupers');
 var help_page = require('./routes/help');
+var setupEventScreen = require('./routes/login');
+var signEventScreen = require('./routes/signup');
+var viewEventScreen = require ('./routes/profile');
+var editSched = require ('./routes/editSchedule');
+
 
 // Create the server instance
 var server = express();
@@ -51,6 +56,10 @@ server.get('/notifications', notificationsScreen.screenView);
 server.get('/createEvent', create_event.create);
 server.get('/gruupers', gruupers_page.gruup);
 server.get('/help', help_page.helpList);
+server.get('/login', setupEventScreen.setup);
+server.get('/signup', signEventScreen.sign);
+server.get('/profile', viewEventScreen.view);
+server.get('/editSchedule', editSched.editSchedule);
 
 // Start the server
 http.createServer(server).listen(server.get('port'), function(){

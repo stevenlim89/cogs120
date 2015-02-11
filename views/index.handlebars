@@ -13,14 +13,18 @@
 
   <!-- This is the bar that will be at every page -->
   <div class="container">
-      <a href="#"><button type="button" id="Menu">Menu</button></a>          
-      <a href="calendar"><button type="button" id="Calendar">Calendar</button></a>
-      <a href="/" id="title"><h1><center>Gruupster</center></h1></a> 
-      <ul>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="Menu" aria-expanded="false">Menu</button>
+      <ul class="dropdown-menu" role="menu">
           <li><a href="gruupers" class="list">Gruupers</a></li>
           <li><a href="notifications" class="list">Notifications</a></li>
+          <li><a href="profile" class="list">Profile</a></li>
           <li><a href="help" class="list">Help</a></li>
-      </ul>       
+      </ul>
+      </div>          
+      <a href="calendar"><button type="button" id="Calendar">Calendar</button></a>
+      <a href="/" id="title"><h1><center>Gruupster</center></h1></a> 
+           
   </div>
 
   <!-- This displays the date and month that is currently selected -->
