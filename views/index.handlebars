@@ -16,10 +16,10 @@
     <div class="btn-group">
       <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="Menu" aria-expanded="false">Menu</button>
       <ul class="dropdown-menu" role="menu">
-          <li><a href="gruupers" class="list">Gruupers</a></li>
-          <li><a href="notifications" class="list">Notifications</a></li>
-          <li><a href="profile" class="list">Profile</a></li>
-          <li><a href="help" class="list">Help</a></li>
+          <li><a href="gruupers" class="list" data-ajax="false">Gruupers</a></li>
+          <li><a href="notifications" class="list" data-ajax="false">Notifications</a></li>
+          <li><a href="profile" class="list" data-ajax="false">Profile</a></li>
+          <li><a href="help" class="list" data-ajax="false">Help</a></li>
       </ul>
       </div>          
       <a href="calendar" data-ajax="false"><button type="button" id="Calendar">Calendar</button></a>
@@ -51,8 +51,8 @@
   <!-- This container has the buttons to go to creating an event or editing a user's schedule -->
   <div class="container">
       <div class="scheduling">
-          <a href="editSchedule"><button type="button" id="editSched">Edit Schedule</button></a> 
-          <a href="createEvent"><button type="button" id="createEvent">GroupUp Event</button></a>
+          <a href="editSchedule" data-ajax="false"><button type="button" id="editSched">Edit Schedule</button></a> 
+          <a href="createEvent" data-ajax="false"><button type="button" id="createEvent">GroupUp Event</button></a>
       </div>
   </div>
   

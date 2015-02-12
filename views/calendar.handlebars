@@ -7,7 +7,8 @@
 
     <link href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" rel="stylesheet"></link>
     <link href="fullcalendar/fullcalendar.css" rel="stylesheet"/>
-
+    <link href="css/index.css" rel="stylesheet"></link>
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet"></link>
     <script src="fullcalendar/lib/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery.js"></script>
  
@@ -41,17 +42,19 @@
 </head>
 
 <body>
-    <!-- This is the bar that will be at every page -->
     <div class="container">
-      <a href="#"><button type="button" id="Menu">Menu</button></a>          
-      <a href="calendar"><button type="button" id="cal">Calendar</button></a>
-      <a href="/" id="title" data-ajax="false"><h1><center>Gruupster</center></h1></a> 
-      <ul>
-          <li><a href="gruupers" class="list">Gruupers</a></li>
-          <li><a href="notifications" class="list">Notifications</a></li>
-          <li><a href="help" class="list">Help</a></li>
-      </ul>       
-    </div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="Menu" aria-expanded="false">Menu</button>
+      <ul class="dropdown-menu" role="menu">
+          <li><a href="gruupers" class="list" data-ajax="false">Gruupers</a></li>
+          <li><a href="notifications" class="list" data-ajax="false">Notifications</a></li>
+          <li><a href="profile" class="list" data-ajax="false">Profile</a></li>
+          <li><a href="help" class="list" data-ajax="false">Help</a></li>
+      </ul>
+      </div>          
+      <a href="#" data-ajax="false"><button type="button" id="Calendar">Calendar</button></a>
+      <a href="/" id="title" data-ajax="false"><h1><center>Gruupster</center></h1></a>   
+  </div>
 
     <hr>
 
@@ -74,7 +77,7 @@
                 </a></li>
         </ul>
     </div>
-   
+   <script src="bootstrap/js/bootstrap.js"></script>
 </body>
 
 </html>

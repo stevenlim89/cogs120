@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Create Event</title>
+    <link href="css/index.css" rel="stylesheet"></link>
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet"></link>
     <link href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" rel="stylesheet"></link>
     <style>
@@ -20,7 +21,22 @@
 
 <body>
   
-  <div class="containers">
+  <!-- This is the bar that will be at every page -->
+  <div class="container">
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="Menu" aria-expanded="false">Menu</button>
+      <ul class="dropdown-menu" role="menu">
+          <li><a href="gruupers" class="list" data-ajax="false">Gruupers</a></li>
+          <li><a href="notifications" class="list" data-ajax="false">Notifications</a></li>
+          <li><a href="#" class="list">Profile</a></li>
+          <li><a href="help" class="list" data-ajax="false">Help</a></li>
+      </ul>
+      </div>          
+      <a href="calendar" data-ajax="false"><button type="button" id="Calendar">Calendar</button></a>
+      <a href="/" id="title" data-ajax="false"><h1><center>Gruupster</center></h1></a>    
+  </div>
+
+  <div class="profile">
     <h1><center>LOGO (placeholder)</center></h1>
     <h2><center>Steven Lim's Profile</center></h2>
     <form>
