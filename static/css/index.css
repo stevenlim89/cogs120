@@ -38,8 +38,16 @@
 	height: 5%;
 }
 
+
 #arrowRight{
 	float: right;
 	width: 5%;
 	height: 5%;
+}
+
+#index_today_button{
+	text-decoration: none;
+	color: white;
+	width: 20%;
+	background-color: #6AC3FF;
 }

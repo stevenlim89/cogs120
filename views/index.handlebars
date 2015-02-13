@@ -7,6 +7,11 @@
     <link href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" rel="stylesheet"></link>
     <link href="css/index.css" rel="stylesheet"></link>
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet"></link>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="javascript/moment.js"></script>
+    <script src="javascript/main.js"></script>
 </head>
 
 <body>
@@ -19,12 +24,12 @@
           <li><a href="gruupers" class="list" data-ajax="false">Gruupers</a></li>
           <li><a href="notifications" class="list" data-ajax="false">Notifications</a></li>
           <li><a href="profile" class="list" data-ajax="false">Profile</a></li>
+          <li><a href="settings" class="list" data-ajax="false">Settings</a></li>
           <li><a href="help" class="list" data-ajax="false">Help</a></li>
       </ul>
       </div>          
       <a href="calendar" data-ajax="false"><button type="button" id="Calendar">Calendar</button></a>
-      <a href="#" id="title"><h1><center>Gruupster</center></h1></a> 
-           
+      <a href="#" id="title"><h1><center>Gruupster</center></h1></a>    
   </div>
 
   <!-- This displays the date and month that is currently selected -->
@@ -32,27 +37,20 @@
       <div class="page-header">
         <h2 id="day"></h2>
         <div class="arrowContainer">
-            <a href="#"><img id="arrowLeft" src="images/icon-ios7-arrow-back-128.png"></a>
-            <a href="#"><img id="arrowRight" src="images/icon-ios7-arrow-right-128.png"></a>
+            <img id="arrowLeft" src="images/icon-ios7-arrow-back-128.png">
+            <img id="arrowRight" src="images/icon-ios7-arrow-right-128.png">
             <h1 id="month"></h1>
             
         </div>    
         <h1 id="date"></h1>        
-          <script type="text/javascript">
-            var names = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-            var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-            var d = new Date();
-            document.getElementById("month").innerHTML = names[d.getMonth()];
-            document.getElementById("day").innerHTML = days[d.getDay()];
-            document.getElementById("date").innerHTML = d.getDate();
-          </script>
   </div>
 
   <!-- This container has the buttons to go to creating an event or editing a user's schedule -->
   <div class="container">
       <div class="scheduling">
-          <a href="editSchedule" data-ajax="false"><button type="button" id="editSched">Edit Schedule</button></a> 
+          <a href="editSchedule" data-ajax="false"><button type="button" id="editSched">Edit Schedule</button></a>
           <a href="createEvent" data-ajax="false"><button type="button" id="createEvent">GroupUp Event</button></a>
+          <center><button type="button" id="index_today_button">Today</button></center>
       </div>
   </div>
   
@@ -72,10 +70,6 @@
               </a></li>
       </ul>    
   </div>  
-    
- 	<script src="https://code.jquery.com/jquery.js"></script>
-  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-  <script src="bootstrap/js/bootstrap.js"></script>
 </body>
 
 </html>

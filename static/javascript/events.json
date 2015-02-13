@@ -1,0 +1,51 @@
+{
+	"events" : [
+	{
+		"email" : "s.lim@ucsd.edu",
+		"title" : "Event1",
+		"start" : "2014-02-10T14:00:00",
+		"end" : "2014-02-10T16:00:00",
+		"location" : "Rimac",
+		"repeat" : "none",
+		"allday" : "false",
+		"description": "play bball",
+		"guests" : ["b.fitts@ucsd.edu", "k.nieh@ucsd.edu"]
+	},
+	
+	{
+		"email" : "s.lim@ucsd.edu",
+		"title" : "Event2",
+		"start" : "2014-02-10",
+		"end" : "2014-02-10",
+		"location" : "Price Center",
+		"repeat" : "MWF",
+		"allday" : "true",
+		"description": "Eat",
+		"guests" : ["b.fitts@ucsd.edu", "k.nieh@ucsd.edu"]
+	},
+
+	{
+		"email" : "k.nieh@ucsd.edu",
+		"title" : "EventX",
+		"start" : "2014-02-10T21:00:00",
+		"end" : "2014-02-10T23:00:00",
+		"location" : "The Club",
+		"repeat" : "none",
+		"allday" : "false",
+		"description": "dance",
+		"guests" : ["s.lim@ucsd.edu", "b.fitts@ucsd.edu"]
+	},
+	
+	{
+		"email" : "k.nieh@ucsd.edu",
+		"title" : "EventY",
+		"start" : "2014-02-10",
+		"end" : "2014-02-10",
+		"location" : "Rimac",
+		"repeat" : "none",
+		"allday" : "false",
+		"description": "play bball",
+		"guests" : ["j.kap@ucsd.edu"]
+	}
+  ]
+}

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Create Event</title>
+    <title>Settings</title>
     <link href="css/index.css" rel="stylesheet"></link>
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet"></link>
     <link href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" rel="stylesheet"></link>
@@ -18,38 +18,32 @@
                 <li><a href="gruupers" class="list" data-ajax="false">Gruupers</a></li>
                 <li><a href="notifications" class="list" data-ajax="false">Notifications</a></li>
                 <li><a href="profile" class="list" data-ajax="false">Profile</a></li>
-                <li><a href="settings" class="list" data-ajax="false">Settings</a></li>
+                <li><a href="#" class="list" data-ajax="false">Settings</a></li>
                 <li><a href="help" class="list" data-ajax="false">Help</a></li>
             </ul>
         </div>          
         <a href="calendar" data-ajax="false"><button type="button" id="Calendar">Calendar</button></a>
         <a href="/" id="title" data-ajax="false"><h1><center>Gruupster</center></h1></a>  
   </div>
-  
-    <div class="container">
 
-    <h2><center>Create Event</center></h2>
-    
-    <form>
-        Location:<br>
-        <input type="text" name="location">
-        <br>
-        Description:<br>
-        <input type="text" name="description">
-        Date:<br>
-        <input type="text" name="date">
-        <br>
-        time:<br>
-        <input type="text" name="time">
-        <br>
-        <input type="submit" value="Submit">
-        <input type="submit" value="Cancel">
-    </form>
-  </div>
- 
- 	<script src="https://code.jquery.com/jquery.js"></script>
+  <div class="events">
+    <ul class="listviews" data-role="listview">
+      
+      <li data-role="list-divider">Edit Profile</li>
+        <li><a href="http://s3-ec.buzzfed.com/static/2015-02/1/22/enhanced/webdr11/enhanced-4865-1422847728-16.jpg">
+          <h2>Edit Profile</h2>
+        </a></li>
+
+      <li data-role="list-divider">Edit Icon</li>
+        <li><a href="http://s3-ec.buzzfed.com/static/2015-02/1/22/enhanced/webdr11/enhanced-4865-1422847728-16.jpg">
+          <h2>Edit Icon</h2>
+        </a></li>
+
+    </ul>    
+  </div> 
+
+  <script src="https://code.jquery.com/jquery.js"></script>
   <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
   <script src="bootstrap/js/bootstrap.js"></script>
 </body>
-
-</html>
+</head>

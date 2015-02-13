@@ -19,6 +19,7 @@ var setupEventScreen = require('./routes/login');
 var signEventScreen = require('./routes/signup');
 var viewEventScreen = require ('./routes/profile');
 var editSched = require ('./routes/editSchedule');
+var settingsPage = require('./routes/settings');
 
 
 // Create the server instance
@@ -60,6 +61,7 @@ server.get('/login', setupEventScreen.setup);
 server.get('/signup', signEventScreen.sign);
 server.get('/profile', viewEventScreen.view);
 server.get('/editSchedule', editSched.editSchedule);
+server.get('/settings', settingsPage.setting);
 
 // Start the server
 http.createServer(server).listen(server.get('port'), function(){
