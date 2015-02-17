@@ -19,20 +19,28 @@
     <script type="text/javascript">
 
         $(document).ready(function() {
+            var models = require('../models');
             var date = new Date();
             var d = date.getDate();
             var m = date.getMonth();
             var day = date.getDay();
+            console.log("******8session info:    " + req.session.loginInfo);
+            models.Project
+                .find({"email": req.session.loginInfo})
+                .exec(findEvents);
 
-            $('#calendar').fullCalendar({
-                // put your options and callbacks here
-                editable: true,
-                weekMode: 'liquid',
-                url: '#',
-                events: [
-                ],
-                aspectRatio: 2
-            })
+                function findEvents(err, emailMatch){
+                  console.log("********************EVENTS:   " + emailMatch);
+                    $('#calendar').fullCalendar({
+                    // put your options and callbacks here
+                    editable: true,
+                    weekMode: 'liquid',
+                    url: '#',
+                    events: emailMatch[0].events,
+                    aspectRatio: 2
+                    })
+                }
+            
 
         });
 

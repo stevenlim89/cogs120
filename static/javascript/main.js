@@ -1,4 +1,8 @@
-$(document).ready(function index_init(){
+$(document).ready(
+	index_init()
+);
+
+function index_init(){
 
 	var index_moment = moment();
 
@@ -17,7 +21,7 @@ $(document).ready(function index_init(){
 		index_moment = moment();
 		index_currMoment(index_moment);
 	});
-});
+}
 
 function index_currMoment(curr_moment){
 

@@ -13,15 +13,15 @@
   <div class="container">
     <h3><center>LOGO (placeholder)</center></h3>
     <h2><center>Log In</center></h2>
-    <form>
+    <form action="/processLogin" data-ajax="false" method="POST">
         Username:<br>
-        <input type="text" name="username">
+        <input type="text" name="email">
         <br>
         Password:<br>
-        <input type="text" name="password">
+        <input type="password" name="password">
         <br>
         <br>
-        <input type="button" value="Login">
+        <input type="submit" value="Login">
         <br>
         <br>
         <input type="button" value="Forgot Password">

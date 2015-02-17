@@ -1,7 +1,6 @@
 /**
 
  */
-
 // Express is a web framework for node.js
 // that makes nontrivial applications easier to build
 var express = require('express');
@@ -20,8 +19,12 @@ var signEventScreen = require('./routes/signup');
 var viewEventScreen = require ('./routes/profile');
 var editSched = require ('./routes/editSchedule');
 var settingsPage = require('./routes/settings');
+var processNewEvent = require('./routes/processNewEvent');
+var processLogin = require('./routes/processLogin');
 
-
+var mongoose = require('mongoose');
+var connect_mongo = require('connect-mongo')(express);
+var sub = require('./routes/submit');
 // Create the server instance
 var server = express();
 
@@ -41,14 +44,17 @@ server.use(express.favicon());
 server.use(express.json());
 server.use(express.urlencoded());
 server.use(express.methodOverride());
-server.use(express.cookieParser('Intro HCI secret key'));
-server.use(express.session());
+server.use(express.cookieParser());
+server.use(express.session({
+	secret: 'login_session'
+}));
 server.use(server.router);
 server.use(express.static(path.join(__dirname, 'static')));
 
 
 if ('development' == server.get('env')) {
   server.use(express.errorHandler());
+  mongoose.connect('mongodb://localhost/cogs120g2');
 }
 
 server.get('/', index1.view);
@@ -62,6 +68,9 @@ server.get('/signup', signEventScreen.sign);
 server.get('/profile', viewEventScreen.view);
 server.get('/editSchedule', editSched.editSchedule);
 server.get('/settings', settingsPage.setting);
+server.post('/processNewEvent', processNewEvent.processEvent); 
+server.post('/newPost', sub.signup);
+server.post('/processLogin', processLogin.authenticate);
 
 // Start the server
 http.createServer(server).listen(server.get('port'), function(){

@@ -13,7 +13,7 @@
 
     <h3><center>LOGO (placeholder)</center></h3>
     <h2><center>Sign Up</center></h2>
-    <form>
+    <form action="/newPost" method="POST">
         First Name:<br>
         <input type="text" name="firstname">
         <br>
@@ -24,12 +24,12 @@
         <input type="text" name="ucsdemail">
         <br>
         Password:<br>
-        <input type="text" name="username">
+        <input type="password" name="password">
         <br>
         Confirm Password:<br>
-        <input type="text" name="password">
+        <input type="password" name="confirm_password">
         <br>
-        <input type="button" value="Create">
+        <input type="submit" value="Create">
         <input type="button" value="Cancel">
     </form>
   </div>

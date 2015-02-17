@@ -1,0 +1,12 @@
+[{
+	"firstname": "steven",
+	"lastname": "lim",
+	"password": "hello",
+	"email": "s@ucsd.edu",
+	"icon": "", 
+	"major": "CE",
+	"year": "2012",
+	"friend_array": ["j.kap@ucsd.edu", "k.nieh@ucsd.edu", "c.chung@ucsd.edu", 	"b.fitts@ucsd.edu", "j.steinbeck@ucsd.edu"],
+	"circle_array": ["fsdfsd", "fsdfdsfsd"],
+	"events": ["Prank on Kenny", "Prank on Steven", "Prank on James, Twice", "Prank each other"]
+}]
