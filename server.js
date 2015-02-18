@@ -21,6 +21,7 @@ var editSched = require ('./routes/editSchedule');
 var settingsPage = require('./routes/settings');
 var processNewEvent = require('./routes/processNewEvent');
 var processLogin = require('./routes/processLogin');
+var home = require('./routes/homepage');
 
 var mongoose = require('mongoose');
 var connect_mongo = require('connect-mongo')(express);
@@ -58,7 +59,7 @@ if ('development' == server.get('env')) {
 }
 
 //server.get('/', index1.view);
-server.get('/today', index1.view);
+server.get('/homepage', home.main);
 server.get('/', setupEventScreen.setup);
 server.get('/calendar', calendar1.cal);
 server.get('/notifications', notificationsScreen.screenView);

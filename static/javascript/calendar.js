@@ -7,9 +7,9 @@ function initializePage() {
     var d = date.getDate();
     var m = date.getMonth();
     var day = date.getDay();
-
-    //var email = getCookie("login_session");
-    //console.log("**************************THIS IS THE EMAIL:      " + email);
+    $.getJSON('../../email.json', function(data){
+    	console.log("DATA in json file:     " + data);
+    });
     $('#calendar').fullCalendar({
         // put your options and callbacks here
         editable: true,

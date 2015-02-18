@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gruupers</title>
+
+    <link href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" rel="stylesheet"></link>
+    <link href="fullcalendar/fullcalendar.css" rel="stylesheet"/>
+    <link href="css/index.css" rel="stylesheet"></link>
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet"></link>
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="javascript/moment.js"></script>
+    <script src="javascript/main.js"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="Menu" aria-expanded="false">Menu</button>
+      <ul class="dropdown-menu" role="menu">
+          <li><a href="notifications" class="list" data-ajax="false">Notifications</a></li>
+          <li><a href="profile" class="list" data-ajax="false">Profile</a></li>
+          <li><a href="settings" class="list" data-ajax="false">Settings</a></li>
+          <li><a href="help" class="list" data-ajax="false">Help</a></li>
+          <li><a href="/" class="list" data-ajax="false">Logout</a></li>
+            </ul>
+        </div>          
+        <a href="today" id="title" data-ajax="false"><h1><center>Gruupster</center></h1></a>  
+    </div>
+</div>
+
+<hr>
+
+<div class="jumbotron">
+    <div class="list-group" data-ajax="false">
+        <a href="createEvent" class="list-group-item active">Create Event</a>
+        <a href="editSchedule" class="list-group-item">Edit Schedule</a>
+        <hr>
+        <a href="calendar" class="list-group-item">Calendar</a>
+        <a href="gruupers" class="list-group-item">Friends</a>
+    </div>
+</div>
+
+
+</div>    
+</body>
+
+</html> 

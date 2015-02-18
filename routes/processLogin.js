@@ -24,7 +24,7 @@ exports.authenticate = function(req, res){
 			res.render('login');
 		}
 		if((emailMatch[0].email == (""+userInput.email)) && (emailMatch[0].password == (""+userInput.password))){
-			res.render('index');
+			res.render('homepage');
 		}
 		else{
 			res.render('login');
