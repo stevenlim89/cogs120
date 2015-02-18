@@ -22,6 +22,8 @@ var settingsPage = require('./routes/settings');
 var processNewEvent = require('./routes/processNewEvent');
 var processLogin = require('./routes/processLogin');
 var home = require('./routes/homepage');
+var putEvents = require('./routes/putEvents');
+
 
 var mongoose = require('mongoose');
 var connect_mongo = require('connect-mongo')(express);
@@ -58,19 +60,22 @@ if ('development' == server.get('env')) {
   mongoose.connect('mongodb://localhost/cogs120g2');
 }
 
-//server.get('/', index1.view);
-server.get('/homepage', home.main);
+// Routes to render pages
 server.get('/', setupEventScreen.setup);
 server.get('/calendar', calendar1.cal);
+server.get('/today', index1.view);
+server.get('/homepage', home.main);
 server.get('/notifications', notificationsScreen.screenView);
 server.get('/createEvent', create_event.create);
 server.get('/gruupers', gruupers_page.gruup);
 server.get('/help', help_page.helpList);
-//server.get('/login', setupEventScreen.setup);
 server.get('/signup', signEventScreen.sign);
 server.get('/profile', viewEventScreen.view);
 server.get('/editSchedule', editSched.editSchedule);
 server.get('/settings', settingsPage.setting);
+
+// Routes to process and send information 
+server.get('/putEvents', putEvents.onCal);
 server.post('/processNewEvent', processNewEvent.processEvent); 
 server.post('/newPost', sub.signup);
 server.post('/processLogin', processLogin.authenticate);

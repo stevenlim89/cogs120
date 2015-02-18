@@ -1,7 +1,31 @@
-$(document).ready(
-	index_init()
-);
+$(document).ready(function(){
+	initializeSquares();
+})
+	
 
+
+function initializeSquares(){
+	$("#createSquare").click(function(){
+		window.location = 'createEvent';
+		return false;
+	});
+
+	$("#editSquare").click(function(){
+		window.location = 'editSchedule';
+		return false;
+	});
+
+	$("#calSquare").click(function(){
+		window.location = 'calendar';
+		return false;
+	});
+
+	$("#friendSquare").click(function(){
+		window.location = 'gruupers';
+		return false;
+	});
+	
+}
 function index_init(){
 
 	var index_moment = moment();

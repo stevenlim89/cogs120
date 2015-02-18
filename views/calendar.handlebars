@@ -23,42 +23,27 @@
 
 <body>
     <div class="container">
-    <div class="btn-group">
-      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="Menu" aria-expanded="false">Menu</button>
-      <ul class="dropdown-menu" role="menu">
+      <div class="btn-group btn-group-lg">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+          <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></button>
+        <ul class="dropdown-menu" role="menu">
           <li><a href="gruupers" class="list" data-ajax="false">Gruupers</a></li>
           <li><a href="notifications" class="list" data-ajax="false">Notifications</a></li>
           <li><a href="profile" class="list" data-ajax="false">Profile</a></li>
           <li><a href="settings" class="list" data-ajax="false">Settings</a></li>
           <li><a href="help" class="list" data-ajax="false">Help</a></li>
-       <li><a href="/" class="list" data-ajax="false">Logout</a></li>
-            </ul>
-        </div>          
+          <li><a href="/" class="list" data-ajax="false">Logout</a></li>
+        </ul>
+      </div>          
         <a href="#" data-ajax="false"><button type="button" id="Calendar">Calendar</button></a>
-        <a href="today" id="title" data-ajax="false"><h1><center>Gruupster</center></h1></a>  
+        <a href="homepage" id="title" data-ajax="false"><h1><center>Gruupster <span class="glyphicon glyphicon-home" aria-hidden="true"></span></center></h1></a>  
   </div>
 
-    <hr>
+  <hr>
 
-    <div id="calendar"></div>
-    
-    <div><hr></div>
+  <div id="calendar"></div>
 
-   <div class="event_list">
-        <ul class="listviews" data-role="listview">      
-            <li data-role="list-divider">LET me try this<span class="ui-li-count">+3</span></li>
-                <li><a href="http://s3-ec.buzzfed.com/static/2015-02/1/22/enhanced/webdr11/enhanced-4865-1422847728-16.jpg">
-                    <h2>Spring Break!</h2>
-                    <p><strong>Attending with: Jack, Bob, Anna</strong></p>
-                </a></li>
-
-            <li data-role="list-divider">February 6, 2015<span class="ui-li-count">+4</span></li>
-                <li><a href="http://s3-ec.buzzfed.com/static/2015-02/1/22/enhanced/webdr11/enhanced-4865-1422847728-16.jpg">
-                    <h2>Surprise Kenny with a prank</h2>
-                    <p><strong>Event will take place at Atkinson Hall. Attending: Stewart, Michael, Scott, Albert</strong></p>
-                </a></li>
-        </ul>
-    </div>
+  
    <script src="bootstrap/js/bootstrap.js"></script>
 </body>
 

@@ -11,7 +11,7 @@
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet"></link>
 
     <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
     <script src="bootstrap/js/bootstrap.js"></script>
     <script src="javascript/moment.js"></script>
     <script src="javascript/main.js"></script>
@@ -20,32 +20,39 @@
 
 <body>
 
-<div class="container">
-    <div class="btn-group">
-      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="Menu" aria-expanded="false">Menu</button>
-      <ul class="dropdown-menu" role="menu">
+<div class="containerHeader">
+    <div class="btn-group btn-group-lg">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+        <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="gruupers" class="list" data-ajax="false">Gruupers</a></li>
           <li><a href="notifications" class="list" data-ajax="false">Notifications</a></li>
           <li><a href="profile" class="list" data-ajax="false">Profile</a></li>
           <li><a href="settings" class="list" data-ajax="false">Settings</a></li>
           <li><a href="help" class="list" data-ajax="false">Help</a></li>
           <li><a href="/" class="list" data-ajax="false">Logout</a></li>
-            </ul>
-        </div>          
-        <a href="today" id="title" data-ajax="false"><h1><center>Gruupster</center></h1></a>  
-    </div>
-</div>
+        </ul>
+      </div>          
+        <a href="#" id="title" data-ajax="false"><h1><center>Gruupster <span class="glyphicon glyphicon-home" aria-hidden="true"></span></center></h1></a>  
+  </div>
+  <div class="subContainer">
 
-<hr>
+  </div>  
 
-<div class="jumbotron">
-    <div class="list-group" data-ajax="false">
-        <a href="createEvent" class="list-group-item active">Create Event</a>
-        <a href="editSchedule" class="list-group-item">Edit Schedule</a>
-        <hr>
-        <a href="calendar" class="list-group-item">Calendar</a>
-        <a href="gruupers" class="list-group-item">Friends</a>
-    </div>
-</div>
+<section class="squares">
+  <div class="squareButtonsLeft">  
+    <span class="glyphicon glyphicon-pencil" aria-hidden="true" id="createSquare"><p>Create Event</p>
+  </div>
+  <div class="squareButtonsRight">  
+    <span class="glyphicon glyphicon-edit" aria-hidden="true" id="editSquare"></span><p>Edit Schedule</p>
+  </div>  
+  <div class="squareButtonsLeft">  
+    <span class="glyphicon glyphicon-calendar" aria-hidden="true" id="calSquare"><p>Calendar</p>
+  </div>  
+  <div class="squareButtonsRight">  
+    <span class="glyphicon glyphicon-user" aria-hidden="true" id="friendSquare"><p>Friends</p>  
+  </div>  
+</section>
 
 
 </div>    
