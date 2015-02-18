@@ -57,13 +57,15 @@ if ('development' == server.get('env')) {
   mongoose.connect('mongodb://localhost/cogs120g2');
 }
 
-server.get('/', index1.view);
+//server.get('/', index1.view);
+server.get('/today', index1.view);
+server.get('/', setupEventScreen.setup);
 server.get('/calendar', calendar1.cal);
 server.get('/notifications', notificationsScreen.screenView);
 server.get('/createEvent', create_event.create);
 server.get('/gruupers', gruupers_page.gruup);
 server.get('/help', help_page.helpList);
-server.get('/login', setupEventScreen.setup);
+//server.get('/login', setupEventScreen.setup);
 server.get('/signup', signEventScreen.sign);
 server.get('/profile', viewEventScreen.view);
 server.get('/editSchedule', editSched.editSchedule);

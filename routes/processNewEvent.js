@@ -1,27 +1,28 @@
 //var models = require("../database_modules/events.json");
 var models = require('../models');
+var mongoose = require('mongoose');
 exports.processEvent = function (req, res) {
   // req.body is the data JSON passed from POST
   var processEventObject = req.body;
   var newEvent = new Object();
-
+  var Model = mongoose.model('Project', models.ProjectSchema);
   newEvent.title = processEventObject.location;
   newEvent.allDay = false;
   newEvent.start = processEventObject.date;
   newEvent.end = processEventObject.date;
   newEvent.editable = false;
   
-
-  
   models.Project
     .find({"email": req.session.loginInfo})
     .exec(putEventOnDB);
 
   function putEventOnDB(err, emailMatch){
-    console.log("********This is the newEvent        " + newEvent);
-      emailMatch[0].update({_id: emailMatch[0]._id}, {$push: {events: newEvent}});
-      //emailMatch[0].events.push(newEvent);
-      console.log("********This is the events array:         " + emailMatch[0]);
+    
+     Model.findOne({email: emailMatch[0].email}, function(err, doc){
+          doc.events.push(newEvent);
+          console.log("********This is the events array2:         " + emailMatch[0]);
+          doc.save();
+      });
   }
 
 

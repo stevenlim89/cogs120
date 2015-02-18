@@ -1,3 +1,6 @@
+// Page to sign up for an account
+
+
 var models = require('../models');
 
 exports.signup = function(req, res){
