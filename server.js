@@ -58,7 +58,7 @@ server.use(express.static(path.join(__dirname, 'static')));
 if ('development' == server.get('env')) {
   server.use(express.errorHandler()); 
 }
-mongoose.connect('mongodb://localhost/cogs120g2');
+mongoose.connect('mongodb://<steven>:<hello>@ds045021.mongolab.com:45021/heroku_app33594023');
 
 // Routes to render pages
 server.get('/', setupEventScreen.setup);
