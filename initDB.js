@@ -16,8 +16,8 @@ var models   = require('./models');
 
 // Connect to the Mongo database, whether locally or on Heroku
 // MAKE SURE TO CHANGE THE NAME FROM 'lab7' TO ... IN OTHER PROJECTS
-var local_database_name = 'cogs120g2';
-var local_database_uri  = 'mongodb://<OGuser>:<cogs120>@ds045531.mongolab.com:45531/cogs120g2';
+
+var local_database_uri  = 'mongodb://localhost/cogs120g2';
 var database_uri = process.env.MONGOLAB_URI || local_database_uri;
 mongoose.connect(database_uri);
 
@@ -25,7 +25,7 @@ mongoose.connect(database_uri);
 // Do the initialization here
 
 // Step 1: load the JSON data
-/*var projects_json = require('./practice.json');*/
+var projects_json = require('./user.json');
 
 // Step 2: Remove all existing documents
 models.Project
@@ -52,7 +52,7 @@ function onceClear(err) {
         console.log('DONE');
         // The script won't terminate until the 
         // connection to the database is closed
-        //mongoose.connection.close();
+        mongoose.connection.close();
       //}
     //});
   }

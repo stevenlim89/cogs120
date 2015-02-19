@@ -57,7 +57,7 @@ server.use(express.static(path.join(__dirname, 'static')));
 
 if ('development' == server.get('env')) {
   server.use(express.errorHandler());
-  mongoose.connect('mongodb://<OGuser>:<cogs120>@ds045531.mongolab.com:45531/cogs120g2');
+  mongoose.connect('mongodb://localhost/cogs120g2');
 }
 
 // Routes to render pages
