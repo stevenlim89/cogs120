@@ -6,7 +6,11 @@ exports.processEvent = function (req, res) {
   var processEventObject = req.body;
   var newEvent = new Object();
   var Model = mongoose.model('Project', models.ProjectSchema);
-  newEvent.title = processEventObject.location;
+
+  var start_hour = processEventObject.start_hour;
+
+  console.log("******This is the start_hour:    " + start_hour);
+  newEvent.title = processEventObject.title;
   newEvent.allDay = false;
   newEvent.start = processEventObject.date;
   newEvent.end = processEventObject.date;
@@ -39,6 +43,6 @@ exports.processEvent = function (req, res) {
 //	function afterSaving(err) { // this is a callback
 //	  if(err) {console.log(err); res.send(500); }
 			// Save was successful, should redirect to success page, not index
-	  	res.render("index");
+	  	res.render("homepage");
 //	}
 }

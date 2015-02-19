@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Signup</title>
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet"></link>
-    <link href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" rel="stylesheet"></link>
 </head>
 
 <body>
@@ -13,6 +12,9 @@
 
     <h3><center>LOGO (placeholder)</center></h3>
     <h2><center>Sign Up</center></h2>
+     <div>
+        {{errMsg}}
+    </div>  
     <form action="/newPost" method="POST">
         First Name:<br>
         <input type="text" name="firstname">
@@ -32,10 +34,10 @@
         <input type="submit" value="Create">
         <a href="/" data-ajax="false"><input type="button" value="Cancel"></a>
     </form>
+
   </div>
  
   <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
   <script src="bootstrap/js/bootstrap.js"></script>
 </body>
 

@@ -10,16 +10,17 @@ exports.authenticate = function(req, res){
 		.exec(testMatchingEmail);
 
 	function testMatchingEmail(err, emailMatch){
-		console.log("EMAILMATCH in processLOGIN:      " + emailMatch[0]);
-		if(err){
-			res.render('login');
-		}
-		if((emailMatch[0].email == (""+userInput.email)) && (emailMatch[0].password == (""+userInput.password))){
-			res.render('homepage');
+		if((typeof(emailMatch[0]) == 'undefined') || err){
+			res.render('login', {errMsg: "Wrong information or signup"});
 		}
 		else{
-			res.render('login');
-		}
+			if((emailMatch[0].email == (""+userInput.email)) && (emailMatch[0].password == (""+userInput.password))){
+				console.log("***********userinfo:    "+ emailMatch[0]);
+				res.render('homepage');
+			}				
+			else
+				res.render('login');
+		}	
 	}
 }
 

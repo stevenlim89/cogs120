@@ -23,11 +23,11 @@ var processNewEvent = require('./routes/processNewEvent');
 var processLogin = require('./routes/processLogin');
 var home = require('./routes/homepage');
 var putEvents = require('./routes/putEvents');
-
+var sub = require('./routes/submit');
 
 var mongoose = require('mongoose');
 var connect_mongo = require('connect-mongo')(express);
-var sub = require('./routes/submit');
+
 
 //var local_database_name = 'cogs120g2'
 var local_database_uri  = 'mongodb://steven:hello@ds045021.mongolab.com:45021/heroku_app33594023';

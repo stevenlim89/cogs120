@@ -16,14 +16,31 @@ exports.signup = function(req, res){
     "email": form_data.ucsdemail
   });
 
-  newPost.save(saving);
+  models.Project
+    .find({"email": newPost.email})
+    .exec(unique);
 
-  function saving(err){
+    function unique(err, isUnique){
+       if(typeof(isUnique[0]) == 'undefined'){
+        newPost.save(saving);
+          console.log("**************Case 1");
+       }
+          
+       else{
+        res.render('signup', {errMsg: "Email exists already"}); 
+console.log("**************Case 2");       }
+             
+    }
+  
+
+  function saving(err, newuser){
     if(err){
     	console.log(err);
+      
     	res.render('signup');
     }
     else{
+      
     	res.render('login');
     } 
     
