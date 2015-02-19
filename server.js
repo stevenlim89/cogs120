@@ -54,10 +54,10 @@ server.use(express.session({
 server.use(server.router);
 server.use(express.static(path.join(__dirname, 'static')));
 
-
+mongoose.connect('mongodb://localhost/cogs120g2');
 if ('development' == server.get('env')) {
   server.use(express.errorHandler());
-  mongoose.connect('mongodb://localhost/cogs120g2');
+  
 }
 
 // Routes to render pages
