@@ -52,7 +52,7 @@ function onceClear(err) {
         console.log('DONE');
         // The script won't terminate until the 
         // connection to the database is closed
-        mongoose.connection.close();
+        //mongoose.connection.close();
       //}
     //});
   }
