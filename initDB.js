@@ -17,7 +17,7 @@ var models   = require('./models');
 // Connect to the Mongo database, whether locally or on Heroku
 // MAKE SURE TO CHANGE THE NAME FROM 'lab7' TO ... IN OTHER PROJECTS
 
-var local_database_uri  = 'mongodb://<steven>:<hello>@ds045021.mongolab.com:45021/heroku_app33594023';
+var local_database_uri  = 'mongodb://steven:hello@ds045021.mongolab.com:45021/heroku_app33594023';
 var database_uri = process.env.MONGOLAB_URI || local_database_uri;
 mongoose.connect(database_uri);
 
@@ -28,13 +28,13 @@ mongoose.connect(database_uri);
 var projects_json = require('./user.json');
 
 // Step 2: Remove all existing documents
-//models.Project
-  //.find()
-  //.exec(onceClear); // callback to continue at
+models.Project
+  .find()
+  .exec(onceClear); // callback to continue at
 
 // Step 3: load the data from the JSON file
-//function onceClear(err) {
- // if(err) console.log(err);
+function onceClear(err) {
+  if(err) console.log(err);
 
   // loop over the projects, construct and save an object from each one
   // Note that we don't care what order these saves are happening in...
@@ -52,9 +52,9 @@ var projects_json = require('./user.json');
    //     console.log('DONE');
         // The script won't terminate until the 
         // connection to the database is closed
-        //mongoose.connection.close();
+        mongoose.connection.close();
       //}
     //});
-  //}
+  }
 
 

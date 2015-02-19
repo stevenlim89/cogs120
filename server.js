@@ -28,6 +28,11 @@ var putEvents = require('./routes/putEvents');
 var mongoose = require('mongoose');
 var connect_mongo = require('connect-mongo')(express);
 var sub = require('./routes/submit');
+
+//var local_database_name = 'cogs120g2'
+var local_database_uri  = 'mongodb://steven:hello@ds045021.mongolab.com:45021/heroku_app33594023';
+var database_uri = process.env.MONGOLAB_URI || local_database_uri;
+mongoose.connect(database_uri);
 // Create the server instance
 var server = express();
 
@@ -58,7 +63,7 @@ server.use(express.static(path.join(__dirname, 'static')));
 if ('development' == server.get('env')) {
   server.use(express.errorHandler()); 
 }
-mongoose.connect('mongodb://<steven>:<hello>@ds045021.mongolab.com:45021/heroku_app33594023');
+
 
 // Routes to render pages
 server.get('/', setupEventScreen.setup);
