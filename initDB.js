@@ -28,13 +28,13 @@ mongoose.connect(database_uri);
 var projects_json = require('./user.json');
 
 // Step 2: Remove all existing documents
-models.Project
-  .find()
-  .exec(onceClear); // callback to continue at
+//models.Project
+  //.find()
+  //.exec(onceClear); // callback to continue at
 
 // Step 3: load the data from the JSON file
-function onceClear(err) {
-  if(err) console.log(err);
+//function onceClear(err) {
+ // if(err) console.log(err);
 
   // loop over the projects, construct and save an object from each one
   // Note that we don't care what order these saves are happening in...
@@ -49,7 +49,7 @@ function onceClear(err) {
       //to_save_count--;
       //console.log(to_save_count + ' left to save');
       //if(to_save_count <= 0) {
-        console.log('DONE');
+   //     console.log('DONE');
         // The script won't terminate until the 
         // connection to the database is closed
         mongoose.connection.close();
