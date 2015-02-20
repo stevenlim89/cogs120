@@ -6,15 +6,14 @@
     <title>Settings</title>
     <link href="css/index.css" rel="stylesheet"></link>
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet"></link>
-    <link href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" rel="stylesheet"></link>
 </head>
 
 <body>
     <!-- This is the bar that will be at every page -->
-    <div class="container">
-      <div class="btn-group btn-group-lg">
-        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-          <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></button>
+    <div class="containerHeader">
+    <div class="btn-group btn-group-lg">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+        <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></button>
         <ul class="dropdown-menu" role="menu">
           <li><a href="gruupers" class="list" data-ajax="false">Gruupers</a></li>
           <li><a href="notifications" class="list" data-ajax="false">Notifications</a></li>
@@ -24,28 +23,19 @@
           <li><a href="/" class="list" data-ajax="false">Logout</a></li>
         </ul>
       </div>          
-        <a href="calendar" data-ajax="false"><button type="button" id="Calendar">Calendar</button></a>
-        <a href="homepage" id="title" data-ajax="false"><h1><center>Gruupster <span class="glyphicon glyphicon-home" aria-hidden="true"></span></center></h1></a>  
+        <a href="homepage" id="title" data-ajax="false"><h1><center>Gruupster</center></h1></a>  
   </div>
 
-  <div class="events">
-    <ul class="listviews" data-role="listview">
-      
-      <li data-role="list-divider">Edit Profile</li>
-        <li><a href="http://s3-ec.buzzfed.com/static/2015-02/1/22/enhanced/webdr11/enhanced-4865-1422847728-16.jpg">
-          <h2>Edit Profile</h2>
-        </a></li>
-
-      <li data-role="list-divider">Edit Icon</li>
-        <li><a href="http://s3-ec.buzzfed.com/static/2015-02/1/22/enhanced/webdr11/enhanced-4865-1422847728-16.jpg">
-          <h2>Edit Icon</h2>
-        </a></li>
-
-    </ul>    
-  </div> 
+  <div class="subContainer">
+    <ol class="breadcrumb">
+        <li><a href="homepage">Homepage</a></li>
+        <li><a href="gruupUp">GruupUp</a></li>
+        <li><a href='calendar'>Calendar</a></li>
+        <li><a href='editSchedule'>Schedule</a></li>
+      </ol>
+  </div>
 
   <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
   <script src="bootstrap/js/bootstrap.js"></script>
 </body>
 </head>

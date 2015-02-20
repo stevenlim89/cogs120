@@ -17,7 +17,6 @@ function initializePage() {
 
 		for(var i = 0; i < result.length; i++){
 			userEvents[i] = result[i];
-            alert(""+result[i].title);
 		}    
 		$('#calendar').fullCalendar({
 

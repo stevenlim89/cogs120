@@ -31,13 +31,21 @@ exports.add = function(req, res){
 			    Model.findOne({email: emailMatch[0].email}, function(err, doc){
 		          doc.friend_array.addToSet(result[0].email);
 		          //models.Project.update({"email": emailMatch[0].email}, {"$addToSet": {friend_array: result[0].email}});
-		          doc.save();
-		          addFriendMessage = "" + result[0].email + " successfully added!";
-		          console.log("**************** IF 4");
+		          doc.save(function(err){
+		          	 if(err){
+		          	 	console.log(err);
+		          	 }
+		          	 else{
+		          	 	addFriendMessage = "" + result[0].email + " successfully added!";
+		          	 	res.render('homepage', {"message": addFriendMessage});	
+		          	}
+		          });
+		          
+
+				  
 			    });
 			}
 		}
-		console.log("**************** Tyrying to print");
-		res.render('gruupers', {"addFriendMessage": addFriendMessage}); 
+		
 	}	
 }

@@ -3,24 +3,30 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Gruupers</title>
+    <title>Create Event</title>
     <link href="css/index.css" rel="stylesheet"></link>
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet"></link>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
 
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="bootstrap/js/bootstrap.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('#datepicker').datepicker();
+      });
+    </script>
 </head>
 
 <body>
-
   <!-- This is the bar that will be at every page -->
   <div class="containerHeader">
     <div class="btn-group btn-group-lg">
       <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
         <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></button>
         <ul class="dropdown-menu" role="menu">
-          <li><a href="#" class="list" data-ajax="false">Gruupers</a></li>
+          <li><a href="gruupers" class="list" data-ajax="false">Gruupers</a></li>
           <li><a href="notifications" class="list" data-ajax="false">Notifications</a></li>
           <li><a href="profile" class="list" data-ajax="false">Profile</a></li>
           <li><a href="settings" class="list" data-ajax="false">Settings</a></li>
@@ -28,38 +34,34 @@
           <li><a href="/" class="list" data-ajax="false">Logout</a></li>
         </ul>
       </div>          
-        <a href="homepage" id="title" data-ajax="false"><h1><center>Gruupster</center></h1></a>  
+        <a href="homepage" id="title" data-ajax="false"><h1><center>Gruupster <span class="glyphicon glyphicon-home" aria-hidden="true"></span></center></h1></a>  
   </div>
-
+  
   <div class="subContainer">
     <ol class="breadcrumb">
         <li><a href="homepage">Homepage</a></li>
-        <li><a href="gruupUp">GruupUp</a></li>
+        <li class="active">GruupUp</a></li>
         <li><a href='calendar'>Calendar</a></li>
         <li><a href='editSchedule'>Schedule</a></li>
       </ol>
+    <h2>Gruup Up</h2>
+    <form action="processGruupUp" method="post">
+
+      <input placeholder="Date" type="text" id="datepicker" data-date-format="mm/dd/yyyy" name="date"> *              
+      
+      <br>
+
+      Select Friends
+
+      <div class="checkbox">
+        <label><input type="checkbox" name="{{email}}" value="{{email}}"></label>
+      </div>
+
+      <input type="submit" value="Submit" disable>
+      <input type="button" value="Cancel">
+    </form> 
   </div>
-  <hr>
-
-  <div>
-      <form action="gruupers" method="post">
-          <center>Add Friend: <input type="text" name="addFriend"></center> <hr>
-          <center><input type="submit" value="Add"></center>
-      </form>
-      <div>
-        <p>{{addFriendMessage}}</p> 
-      </div>    
-  </div> 
-
-  {{#each friends}}  
-  <div class="myPanel">
-      <div class="heading">{{firstname}} {{lastname}}</div>
-          <div class="body1">
-          </div>
-  </div>
-  {{/each}}
-
-  
+ 
 </body>
 
 </html>

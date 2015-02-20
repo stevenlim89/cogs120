@@ -6,7 +6,7 @@ $(document).ready(function(){
 
 function initializeSquares(){
 	$("#createSquare").click(function(){
-		window.location = 'createEvent';
+		window.location = 'gruupUp';
 		return false;
 	});
 

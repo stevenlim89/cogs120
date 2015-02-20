@@ -1,16 +1,49 @@
 var models = require('../models');
 var mongoose = require('mongoose');
+exports.calculate = function (req, res) {
+	var form_data = req.body;
 
-exports.gruup = function(req, res){
-	var message;
-	friendsArr = [];
-	array = [];
-	var string = req.message;
-	console.log("@@@@@@@@@@@:    " + string);
+	var timeArray = [];
+	var array = Object.keys(form_data).map(function(key){
+		return form_data[key];
+	});
+
+	array.splice(0, 1);
+
+	console.log("@@@@@@@@form_data:     ");
+	console.log(array);
 	models.Project
 		.find({"email": req.session.loginInfo})
-		.exec(getFriendList);
+		.exec(function(err, result){
+			models.Project
+				.find({"$or": [{"email": {"$in": array}}] })
+				.exec(function(err, foundFriend){
+					if(err){
+						addFriendMessage = "There was a problem accessing your friends list.";
+						console.log("**************** IF 1");
+					}
+					else if(foundFriend[0] != null)
+					{
+						console.log("************ARRAY:   " + foundFriend);
+						//console.log("************ARRAY NAME:   " + array.firstname);
+				
+							
+						for(var i = 0; i < foundFriend.length; i++){
+							for(var j = 0; j < foundFriend[i].events.length; j++){
+								
+							}
+						}
+					}	
+				});
+		});
+}
 
+exports.view = function(req, res){
+
+	models.Project
+		.find({"email": req.session.loginInfo})
+		.exec(getFriendList)
+	
 	function getFriendList(err, result){
 		if(err){
 			message = "There was a problem with our system. Please try again later";
@@ -38,12 +71,11 @@ exports.gruup = function(req, res){
 								string="";
 							}
 								
-							res.render('gruupers', {"friends": foundFriend, "addFriendMessage": string});	
+							res.render('gruupUp', {"listOfFriends": foundFriend});	
 							//console.log("************TEMP:   " + foundFriend[0]);
 						}	
 					});
 			
 		}
 	}
-	
-};
+}

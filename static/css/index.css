@@ -13,7 +13,7 @@ body{
 .subContainer{
 	width: 100%;
 	height: 50px;
-	padding: 50px;
+	display: inline;
 }
 
 .squares{
@@ -84,31 +84,58 @@ body{
 #Calendar, #createEvent{
 	width: 20%;
 	float: right;
+	text-decoration: none;
+}
+
+#friends{
+	width: 50%;
+	float: left;
+	margin: 10px 0 10px 0;
+	background-color: #1F555D;
+	color: white;
+	font: helvetica;
+	text-decoration: none;
+} 
+
+#groups{
+	width: 50%;
+	float: right;
+	margin: 10px 0 10px 0;
+	background-color: #1F555D;
 	color: white;
 	font: helvetica;
 	text-decoration: none;
 }
 
-#day, #date, #month{
-	text-align: center;
+.toggle_bar {
+	border: 1px solid #1F555D;
 }
 
-#arrowLeft{
-	float: left;
-	width: 5%;
-	height: 5%;
+.myPanel:hover {
+	box-shadow: 0px 0px 8px #333;
+	border: 2px solid #687D6D;
 }
 
-
-#arrowRight{
-	float: right;
-	width: 5%;
-	height: 5%;
+.myPanel {
+	border: 1px solid #687D6D;
+	border-radius: 5px 5px 5px 5px;
+	box-shadow: 0px 0px 4px #ccc;
+	margin: 3%;
 }
 
-#index_today_button{
-	text-decoration: none;
+.myPanel .heading {
+	background: #1F555D;
+	border-radius: 5px 5px 0 0;
 	color: white;
-	width: 20%;
-	background-color: #6AC3FF;
+	padding: 10px 20px;
 }
+
+.myPanel .body {
+	padding: 10px 20px;
+}
+
+.myPanel:hover {
+	box-shadow: 0px 0px 8px #333;
+	border: 2px solid #687D6D;
+}
+

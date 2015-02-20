@@ -25,6 +25,7 @@ var home = require('./routes/homepage');
 var putEvents = require('./routes/putEvents');
 var sub = require('./routes/submit');
 var addFriend = require('./routes/processAddFriend');
+var gruupUp = require('./routes/gruupUp');
 
 var mongoose = require('mongoose');
 var connect_mongo = require('connect-mongo')(express);
@@ -79,6 +80,7 @@ server.get('/signup', signEventScreen.sign);
 server.get('/profile', viewEventScreen.view);
 server.get('/editSchedule', editSched.editSchedule);
 server.get('/settings', settingsPage.setting);
+server.get('/gruupUp', gruupUp.view);
 
 // Routes to process and send information 
 server.get('/putEvents', putEvents.onCal);
@@ -86,6 +88,7 @@ server.post('/processNewEvent', processNewEvent.processEvent);
 server.post('/newPost', sub.signup);
 server.post('/processLogin', processLogin.authenticate);
 server.post('/processAddFriend', addFriend.add);
+server.post('/processGruupUp', gruupUp.calculate);
 
 // Start the server
 http.createServer(server).listen(server.get('port'), function(){

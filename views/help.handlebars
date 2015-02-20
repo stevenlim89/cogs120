@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Gruupers</title>
-    <link href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" rel="stylesheet"></link>
     <link href="css/index.css" rel="stylesheet"></link>
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet"></link>
 </head>
@@ -12,10 +11,10 @@
 <body>
 
 <!-- This is the bar that will be at every page -->
-  <div class="container">
-      <div class="btn-group btn-group-lg">
-        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-          <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></button>
+  <div class="containerHeader">
+    <div class="btn-group btn-group-lg">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+        <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></button>
         <ul class="dropdown-menu" role="menu">
           <li><a href="gruupers" class="list" data-ajax="false">Gruupers</a></li>
           <li><a href="notifications" class="list" data-ajax="false">Notifications</a></li>
@@ -25,47 +24,19 @@
           <li><a href="/" class="list" data-ajax="false">Logout</a></li>
         </ul>
       </div>          
-        <a href="calendar" data-ajax="false"><button type="button" id="Calendar">Calendar</button></a>
-        <a href="homepage" id="title" data-ajax="false"><h1><center>Gruupster <span class="glyphicon glyphicon-home" aria-hidden="true"></span></center></h1></a>  
+        <a href="homepage" id="title" data-ajax="false"><h1><center>Gruupster</center></h1></a>  
   </div>
 
-<!-- List view that has the events for that day -->
-  <div class="events">
-      <ul class="listviews" data-role="listview">      
-          <li data-role="list-divider">Adding Friends</li>
-              <li><a href="http://s3-ec.buzzfed.com/static/2015-02/1/22/enhanced/webdr11/enhanced-4865-1422847728-16.jpg">
-                  <h2>How to add friends on Gruupster</h2>
-                  <p><strong>This tutorial will help you find and add Gruupers</strong></p>
-              </a></li>
-
-          <li data-role="list-divider">Making Groups</li>
-              <li><a href="http://s3-ec.buzzfed.com/static/2015-02/1/22/enhanced/webdr11/enhanced-4865-1422847728-16.jpg">
-                  <h2>Learn how to create a group of Gruupers</h2>
-                  <p><strong>This tutorial will aid in helping you form groups so that you can easily make events with the right Gruupers!</strong></p>
-              </a></li>
-
-          <li data-role="list-divider">Making Events</li>
-              <li><a href="http://s3-ec.buzzfed.com/static/2015-02/1/22/enhanced/webdr11/enhanced-4865-1422847728-16.jpg">
-                  <h2>Learn how to create an Event</h2>
-                  <p><strong>This tutorial will help you create events either with just a couple of friends of whole Gruups</strong></p>
-              </a></li>
-
-          <li data-role="list-divider">Editing Schedule</li>
-              <li><a href="http://s3-ec.buzzfed.com/static/2015-02/1/22/enhanced/webdr11/enhanced-4865-1422847728-16.jpg">
-                  <h2>Create and Modify your own personal Schedule</h2>
-                  <p><strong>Learn how to modify your schedule so you can stay on top of your activities!</strong></p>
-              </a></li>
-
-          <li data-role="list-divider">Calendar</li>
-              <li><a href="http://s3-ec.buzzfed.com/static/2015-02/1/22/enhanced/webdr11/enhanced-4865-1422847728-16.jpg">
-                  <h2>Using the calendar</h2>
-                  <p><strong>Learn how to use the calendar efficiently to stay productive and organized.</strong></p>
-              </a></li>        
-      </ul>    
-  </div>  
+<div class="subContainer">
+    <ol class="breadcrumb">
+        <li><a href="homepage">Homepage</a></li>
+        <li><a href="gruupUp">GruupUp</a></li>
+        <li><a href='calendar'>Calendar</a></li>
+        <li><a href='editSchedule'>Schedule</a></li>
+      </ol>
+  </div>
     
  	<script src="https://code.jquery.com/jquery.js"></script>
-  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
   <script src="bootstrap/js/bootstrap.js"></script>
 </body>
 
