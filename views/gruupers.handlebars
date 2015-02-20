@@ -4,17 +4,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Gruupers</title>
-
-    <link href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" rel="stylesheet"></link>
-    <link href="css/gruupers.css" rel="stylesheet"></link>
     <link href="css/index.css" rel="stylesheet"></link>
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet"></link>
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
 </head>
 
 <body>
 
   <!-- This is the bar that will be at every page -->
-  <div class="container">
+  <div class="containerHeader">
       <div class="btn-group btn-group-lg">
         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
           <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></button>
@@ -31,34 +32,26 @@
         <a href="homepage" id="title" data-ajax="false"><h1><center>Gruupster <span class="glyphicon glyphicon-home" aria-hidden="true"></span></center></h1></a>  
   </div>
 
+  <hr>
   <div class="toggle_bar">
       <a href="#"><button type="button" id="groups">Circles</button></a>
       <a href="#"><button type="button" id="friends">Groupers</button></a>  
   </div> 
 
+  <hr>
+
   <div>
-      <form>
-          Search:<input type="text" name="Search">
-      </form>    
+      <form action="processAddFriend" method="post">
+          Add Friend: <input type="text" name="addFriend"> <hr>
+          <input type="submit" value="Add">
+      </form>
+      <div>
+        <p>{{addFriendMessage}}</p>
+      </div>    
   </div> 
 
-  <!-- List view that has the events for that day -->
-  {{#each friends}}
-  <div class="events">
-    
-      <ul class="listviews" data-role="listview">      
-          <li data-role="list-divider">{{name}}</li>
-              <li data-icon="plus"><a href="http://s3-ec.buzzfed.com/static/2015-02/1/22/enhanced/webdr11/enhanced-4865-1422847728-16.jpg">
-                  <img src="images/avengers-14596.jpg">
-              </a></li>
-      </ul>    
-  </div> 
-  {{/each}} 
-
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
-  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-  <script src="bootstrap/js/bootstrap.js"></script>
+  
+  
 </body>
 
 </html>

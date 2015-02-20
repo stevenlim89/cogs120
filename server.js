@@ -24,6 +24,7 @@ var processLogin = require('./routes/processLogin');
 var home = require('./routes/homepage');
 var putEvents = require('./routes/putEvents');
 var sub = require('./routes/submit');
+var addFriend = require('./routes/processAddFriend');
 
 var mongoose = require('mongoose');
 var connect_mongo = require('connect-mongo')(express);
@@ -84,6 +85,7 @@ server.get('/putEvents', putEvents.onCal);
 server.post('/processNewEvent', processNewEvent.processEvent); 
 server.post('/newPost', sub.signup);
 server.post('/processLogin', processLogin.authenticate);
+server.post('/processAddFriend', addFriend.add);
 
 // Start the server
 http.createServer(server).listen(server.get('port'), function(){
