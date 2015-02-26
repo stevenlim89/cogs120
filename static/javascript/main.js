@@ -11,7 +11,7 @@ function initializeSquares(){
 	});
 
 	$("#editSquare").click(function(){
-		window.location = 'editSchedule';
+		window.location = 'createEvent';
 		return false;
 	});
 

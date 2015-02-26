@@ -15,7 +15,7 @@ exports.authenticate = function(req, res){
 		}
 		else{
 			if((emailMatch[0].email == (""+userInput.email)) && (emailMatch[0].password == (""+userInput.password))){
-				console.log("***********userinfo:    "+ emailMatch[0]);
+				//console.log("***********userinfo:    "+ emailMatch[0]);
 				res.render('homepage');
 			}				
 			else

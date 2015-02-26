@@ -2,12 +2,13 @@ var models = require('../models');
 var mongoose = require('mongoose');
 exports.calculate = function (req, res) {
 	var form_data = req.body;
-
+console.log("@@@@@@Form_data:      ");
+console.log(form_data);
 	var timeArray = [];
 	var array = Object.keys(form_data).map(function(key){
 		return form_data[key];
 	});
-
+	var temp = array[0];
 	array.splice(0, 1);
 
 	console.log("@@@@@@@@form_data:     ");
@@ -24,15 +25,16 @@ exports.calculate = function (req, res) {
 					}
 					else if(foundFriend[0] != null)
 					{
-						console.log("************ARRAY:   " + foundFriend);
-						//console.log("************ARRAY NAME:   " + array.firstname);
-				
-							
-						for(var i = 0; i < foundFriend.length; i++){
-							for(var j = 0; j < foundFriend[i].events.length; j++){
-								
-							}
+						foundFriend.push(temp);
+						// foundFriend is array of friends that user selected
+						res.send(foundFriend);		
+						/*
+						user{
+							firstname:
+							lastname:
+							events[]
 						}
+						}*/
 					}	
 				});
 		});

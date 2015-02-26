@@ -28,24 +28,24 @@ exports.add = function(req, res){
 					addFriendMessage = "There was a problem inserting your friend. Please try again";
 					console.log("**************** IF 3");
 				}
-			    Model.findOne({email: emailMatch[0].email}, function(err, doc){
-		          doc.friend_array.addToSet(result[0].email);
-		          //models.Project.update({"email": emailMatch[0].email}, {"$addToSet": {friend_array: result[0].email}});
-		          doc.save(function(err){
-		          	 if(err){
-		          	 	console.log(err);
-		          	 }
-		          	 else{
-		          	 	addFriendMessage = "" + result[0].email + " successfully added!";
-		          	 	res.render('homepage', {"message": addFriendMessage});	
-		          	}
-		          });
-		          
-
-				  
-			    });
+				else{ 
+				    Model.findOne({email: emailMatch[0].email}, function(err, doc){
+			          doc.friend_array.addToSet(result[0].email);
+			          doc.save(function(err){
+			          	 if(err){
+			          	 	console.log(err);
+			          	 }
+			          	 else{
+			          	 	addFriendMessage = "" + result[0].email + " successfully added!";
+			          	 	res.redirect('gruupers');	
+			          	}
+			          });
+			          
+				    });
+				}    
 			}
 		}
+		//res.render('gruupers');
 		
 	}	
 }

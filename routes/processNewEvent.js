@@ -6,13 +6,18 @@ exports.processEvent = function (req, res) {
   var newEvent = new Object();
   var Model = mongoose.model('Project', models.ProjectSchema);
 
-  var start_hour = processEventObject.start_hour;
+  var date = processEventObject.date;
+  var startTime = processEventObject.timepickerStart;
+  var endTime = processEventObject.timepickerEnd;
 
-  console.log("******This is the start_hour:    " + start_hour);
+  var startString = "" + date + " " + startTime;
+  var endString = "" + date + " " + endTime;
+
+  console.log("@@@@@@@@@@startString:     " + startString);
   newEvent.title = processEventObject.title;
   newEvent.allDay = false;
-  newEvent.start = processEventObject.date;
-  newEvent.end = processEventObject.date;
+  newEvent.start = startString;
+  newEvent.end = endString;
   newEvent.editable = false;
   
   models.Project
@@ -23,9 +28,9 @@ exports.processEvent = function (req, res) {
     
      Model.findOne({email: emailMatch[0].email}, function(err, doc){
           doc.events.push(newEvent);
-          console.log("********This is the events array2:         " + emailMatch[0]);
           doc.save();
       });
+     console.log("********This is the events array2:         " + emailMatch[0]);
   }
 	  	res.render("homepage");
 }

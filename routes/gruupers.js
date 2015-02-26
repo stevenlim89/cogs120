@@ -5,8 +5,7 @@ exports.gruup = function(req, res){
 	var message;
 	friendsArr = [];
 	array = [];
-	var string = req.message;
-	console.log("@@@@@@@@@@@:    " + string);
+	
 	models.Project
 		.find({"email": req.session.loginInfo})
 		.exec(getFriendList);
@@ -27,23 +26,16 @@ exports.gruup = function(req, res){
 					.exec(function(err, foundFriend){
 						if(err){
 							addFriendMessage = "There was a problem accessing your friends list.";
-							console.log("**************** IF 1");
+							//console.log("**************** IF 1");
 						}
 						else{
-
 							console.log("************ARRAY:   " + foundFriend);
-							//console.log("************ARRAY NAME:   " + array.firstname);
-							
-							if(typeof(string) == 'undefined'){
-								string="";
-							}
-								
-							res.render('gruupers', {"friends": foundFriend, "addFriendMessage": string});	
-							//console.log("************TEMP:   " + foundFriend[0]);
+							addFriendMessage = "Friend found";	
+							res.render('gruupers', {"friends": foundFriend, "addFriendMessage": addFriendMessage});	
 						}	
 					});
-			
 		}
 	}
 	
 };
+
