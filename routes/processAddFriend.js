@@ -30,6 +30,8 @@ exports.add = function(req, res){
 				}
 				else{ 
 				    Model.findOne({email: emailMatch[0].email}, function(err, doc){
+				    	console.log("&&&&&&&&&&firstVisit:    ");
+				    	console.log(doc);
 			          doc.friend_array.addToSet(result[0].email);
 			          doc.save(function(err){
 			          	 if(err){
@@ -37,7 +39,14 @@ exports.add = function(req, res){
 			          	 }
 			          	 else{
 			          	 	addFriendMessage = "" + result[0].email + " successfully added!";
-			          	 	res.redirect('gruupers');	
+			          	 	/*if(emailMatch[0].firstVisit == true){
+			          	 		console.log("@@@@@@@@@@@firstVisit:    ");
+			          	 		res.redirect('tutorialThree');
+			          	 	}
+			          	 	else{
+			          	 		console.log("!!!!!!!!!!!!!!gruupers");*/
+			          	 		res.redirect('gruupers');
+			          	 	//}	
 			          	}
 			          });
 			          

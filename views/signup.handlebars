@@ -4,18 +4,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Signup</title>
+    <link href="css/index.css" rel="stylesheet"></link>
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet"></link>
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
 </head>
 
 <body>
-  <div class="container">
-
-    <h3><center>LOGO (placeholder)</center></h3>
-    <h2><center>Sign Up</center></h2>
+  <div class="containerHeader">
+    <h1 id="title"><center>Gruupster</center></h1>
+    <h3 id="title"><center>Sign Up</center></h3>
+  </div>  
      <div>
         {{errMsg}}
-    </div>  
+    </div> 
+    <hr width="0"> 
     <form action="/newPost" method="POST">
+        <center>
+        <hr width="0">
         First Name:<br>
         <input type="text" name="firstname">
         <br>
@@ -30,15 +37,11 @@
         <br>
         Confirm Password:<br>
         <input type="password" name="confirm_password">
-        <br>
+        <hr width="0">
         <input type="submit" value="Create">
         <a href="/" data-ajax="false"><input type="button" value="Cancel"></a>
+    </center>
     </form>
-
-  </div>
- 
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="bootstrap/js/bootstrap.js"></script>
 </body>
 
 </html>

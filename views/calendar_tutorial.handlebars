@@ -14,8 +14,10 @@
     <script src="fullcalendar/lib/moment.min.js"></script> 
     <script src="fullcalendar/fullcalendar.js"></script>
     <script src="javascript/breadCrumbs.js"></script>
+    <script src="javascript/main.js"></script>
     <script src="javascript/calendar.js"></script>
     <script src="bootstrap/js/bootstrap.js"></script>
+    
     <link href="css/calendar.css" rel="stylesheet"/>
 </head>
 
@@ -30,10 +32,26 @@
         <button type="button" class="btn btn-primary" id="createEventBC">Create Event</button>
       </div>
     </div>
-
   </div>
   <hr>
-
+  <div class="jumbotron">
+      <div id="tut_second">
+        <h1><center>View your event!</center></h1>
+        <p>Take a look at the calendar for the event you just submitted. By repeating this process, you can create your weekly schedule.</p>
+      </div>
+      <div id="tut_first">
+        <h1><center>Use of Schedule</center></h1>
+        <p>Through your schedule, we can compare it with your friend's schedules when you create an event to find the optimal time(s) to meet with them! Before we create an event, we need to add a friend first.</p>
+        <p><a class="btn btn-primary btn-lg" href="tutorialThree" role="button">Learn More</a></p>
+      </div>
+      <nav>
+        <ul class="pager">
+          <li><a id= "tut_previous">Previous</a></li>
+          <li><a id= "tut_next">Next</a></li>
+        </ul>
+      </nav>
+  </div> <!-- end of jumbotron -->
+      
   <div id="calendar"></div>
 
   

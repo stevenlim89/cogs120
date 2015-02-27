@@ -16,42 +16,22 @@
 
 <body>
 
-  <!-- This is the bar that will be at every page -->
-  <div class="containerHeader">
-    <div class="btn-group btn-group-lg">
-      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-        <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></button>
-        <ul class="dropdown-menu" role="menu">
-          <li><a href="#" class="list" data-ajax="false">Gruupers</a></li>
-          <li><a href="notifications" class="list" data-ajax="false">Notifications</a></li>
-          <li><a href="profile" class="list" data-ajax="false">Profile</a></li>
-          <li><a href="settings" class="list" data-ajax="false">Settings</a></li>
-          <li><a href="help" class="list" data-ajax="false">Help</a></li>
-          <li><a href="/" class="list" data-ajax="false">Logout</a></li>
-        </ul>
-      </div>          
-        <a href="homepage" id="title" data-ajax="false"><h1><center>Gruupster</center></h1></a>  
-  </div>
+  {{> main_head}}
 
   <div class="subContainer">
-    <ol class="breadcrumb">
-        <li><a href="homepage">Homepage</a></li>
-        <li><a href="gruupUp">GruupUp</a></li>
-        <li><a href='calendar'>Calendar</a></li>
-        <li><a href='editSchedule'>Schedule</a></li>
-      </ol>
+    {{> breadCrumbs}}
   </div>
   <hr>
 
     <div class="jumbotron">
       <div id="tut_second">
         <h1><center>Here's your Gruuper's list!</center></h1>
-        <p>Gruuper's is our nickname for your fellow gruupster users and friends! Here you can add people to your Gruuper's list and create circles, aka groups with them. Start by clicking on the search bar and enter "Bob Gruup" or his ucsd email, bgruup@ucsd.edu and add him!</p>
+        <p>Gruuper's is our nickname for your fellow gruupster users and friends! Here you can add people to your Gruuper's list. We have provided a sample user for you to test creating an event with. Start by clicking on the text field and enter his ucsd email, test@ucsd.edu, and add him!</p>
       </div>
       <div id="tut_first">
-        <h1><center>Create an Event!</center></h1>
-        <p>Perfect! Now it's time to make your first event, click on the button below.</p>
-        <p><a class="btn btn-primary btn-lg" href="tutorialFour" role="button">Create Event</a></p>
+        <h1><center>Create a GruupUp!</center></h1>
+        <p>Perfect! Now it's time to create your first gruup up, our way of saying "meet up," with your friends.</p>
+        <p><a class="btn btn-primary btn-lg" href="tutorialFour" role="button">GruupUp</a></p>
       </div>
       <nav>
         <ul class="pager">
@@ -62,7 +42,7 @@
     </div> <!-- end of jumbotron -->
 
     <div>
-      <form action="gruupers" method="post">
+      <form action="processAddFriend" method="post">
           <center>Add Friend: <input type="text" name="addFriend"></center> <hr>
           <center><input type="submit" value="Add"></center>
       </form>

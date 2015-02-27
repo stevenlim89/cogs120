@@ -7,18 +7,24 @@
     <link href="css/index.css" rel="stylesheet"></link>
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet"></link>
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
-    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+    <link href="fullcalendar/fullcalendar.css" rel="stylesheet"/>
+
+    <script src="fullcalendar/lib/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="fullcalendar/lib/moment.min.js"></script> 
+    <script src="fullcalendar/fullcalendar.js"></script>
+  <!--  <script src="http://code.jquery.com/jquery-1.10.2.js"></script> -->
+    <script src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>    
     <script src="javascript/calendar.js"></script>
     <script src="javascript/breadCrumbs.js"></script>
-    <script src="javascript/moment.js"></script>
     <script src="bootstrap/js/bootstrap.js"></script>
+
     <script>
       $(document).ready(function () {
-        $('#datepicker').datepicker();
-      });
+        $('#datepicker').datepicker(); 
+      })
     </script>
+
 </head>
 
 <body>
@@ -26,12 +32,7 @@
   
   <div class="subContainer">
     {{> breadCrumbs}}
-    <!--<ol class="breadcrumb">
-        <li><a href="homepage">Homepage</a></li>
-        <li class="active">GruupUp</a></li>
-        <li><a href='calendar'>Calendar</a></li>
-        <li><a href='editSchedule'>Schedule</a></li>
-      </ol>-->
+    
     <h2>Gruup Up</h2>
     <form action="processGruupUp" method="post" id="gruupUpForm">
 
@@ -51,6 +52,8 @@
       <input type="button" value="Submit" id="gruupUpSubmit">
       <input type="button" value="Cancel">
     </form> 
+
+    <div id="gruupUpCalendar"></div>
   </div>
  
 </body>

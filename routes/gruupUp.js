@@ -2,8 +2,7 @@ var models = require('../models');
 var mongoose = require('mongoose');
 exports.calculate = function (req, res) {
 	var form_data = req.body;
-console.log("@@@@@@Form_data:      ");
-console.log(form_data);
+
 	var timeArray = [];
 	var array = Object.keys(form_data).map(function(key){
 		return form_data[key];
@@ -11,8 +10,6 @@ console.log(form_data);
 	var temp = array[0];
 	array.splice(0, 1);
 
-	console.log("@@@@@@@@form_data:     ");
-	console.log(array);
 	models.Project
 		.find({"email": req.session.loginInfo})
 		.exec(function(err, result){
@@ -28,13 +25,6 @@ console.log(form_data);
 						foundFriend.push(temp);
 						// foundFriend is array of friends that user selected
 						res.send(foundFriend);		
-						/*
-						user{
-							firstname:
-							lastname:
-							events[]
-						}
-						}*/
 					}	
 				});
 		});
@@ -65,16 +55,16 @@ exports.view = function(req, res){
 							console.log("**************** IF 1");
 						}
 						else{
-
-							console.log("************ARRAY:   " + foundFriend);
-							//console.log("************ARRAY NAME:   " + array.firstname);
-							
 							if(typeof(string) == 'undefined'){
 								string="";
 							}
-								
-							res.render('gruupUp', {"listOfFriends": foundFriend});	
-							//console.log("************TEMP:   " + foundFriend[0]);
+							
+							if(result[0].firstVisit == true){
+								res.render('tutorialFour', {"listOfFriends": foundFriend});
+							}
+							else{
+								res.render('gruupUp', {"listOfFriends": foundFriend});
+							}	
 						}	
 					});
 			

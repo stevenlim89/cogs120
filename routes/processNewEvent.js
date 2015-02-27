@@ -13,7 +13,6 @@ exports.processEvent = function (req, res) {
   var startString = "" + date + " " + startTime;
   var endString = "" + date + " " + endTime;
 
-  console.log("@@@@@@@@@@startString:     " + startString);
   newEvent.title = processEventObject.title;
   newEvent.allDay = false;
   newEvent.start = startString;
@@ -30,12 +29,11 @@ exports.processEvent = function (req, res) {
           doc.events.push(newEvent);
           doc.save();
       });
-     console.log("********This is the events array2:         " + emailMatch[0]);
-  }
-  if(emailMatch[0].firstVisited == true){
-    res.render("tutorialThree");
-  }
-  else{
-    res.render("calendar");
+     if(emailMatch[0].firstVisit == true){    
+        res.render("calendar_tutorial");
+     }
+    else{           
+      res.render("calendar");
+    }
   }
 }

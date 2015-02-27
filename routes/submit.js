@@ -40,6 +40,9 @@ exports.signup = function(req, res){
       
     	res.render('signup');
     }
+    else if(form_data.password != form_data.confirm_password){
+      res.render('signup', {errMsg: "Password and Confirm Password do not match"}); 
+    }
     else{
       
     	res.render('login');

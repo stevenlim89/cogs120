@@ -30,8 +30,13 @@ exports.gruup = function(req, res){
 						}
 						else{
 							console.log("************ARRAY:   " + foundFriend);
-							addFriendMessage = "Friend found";	
-							res.render('gruupers', {"friends": foundFriend, "addFriendMessage": addFriendMessage});	
+							addFriendMessage = "Friend found";
+							if(result[0].firstVisit == true){
+								res.render('tutorialThree', {"friends": foundFriend, "addFriendMessage": addFriendMessage});
+							}
+							else{	
+								res.render('gruupers', {"friends": foundFriend, "addFriendMessage": addFriendMessage});	
+							}						
 						}	
 					});
 		}
