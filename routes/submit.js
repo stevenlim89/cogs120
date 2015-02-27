@@ -13,7 +13,8 @@ exports.signup = function(req, res){
     "firstname": form_data.firstname,
     "lastname": form_data.lastname,
     "password": form_data.password,
-    "email": form_data.ucsdemail
+    "email": form_data.ucsdemail,
+    "firstVisit": true
   });
 
   models.Project
@@ -27,8 +28,8 @@ exports.signup = function(req, res){
        }
           
        else{
-        res.render('signup', {errMsg: "Email exists already"}); 
-console.log("**************Case 2");       }
+        res.render('signup', {errMsg: "Email exists already"});   
+       }
              
     }
   

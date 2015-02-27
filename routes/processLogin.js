@@ -1,10 +1,11 @@
 var models = require('../models');
+var mongoose = require('mongoose');
 exports.authenticate = function(req, res){
 	userInput = req.body;
 	console.log(userInput);
 
 	req.session.loginInfo = userInput.email;
-
+	var Model = mongoose.model('Project', models.ProjectSchema);
 	models.Project
 		.find({"email": userInput.email})
 		.exec(testMatchingEmail);
@@ -16,7 +17,16 @@ exports.authenticate = function(req, res){
 		else{
 			if((emailMatch[0].email == (""+userInput.email)) && (emailMatch[0].password == (""+userInput.password))){
 				//console.log("***********userinfo:    "+ emailMatch[0]);
-				res.render('homepage');
+				if(emailMatch[0].firstVisit == true){
+					Model.findOne({email: emailMatch[0].email}, function(err, doc){
+			          //doc.firstVisit = false;
+			          doc.save();
+      				});
+					res.render('tutorialOne');
+				}
+				else{
+					res.render('homepage');
+				}	
 			}				
 			else
 				res.render('login');

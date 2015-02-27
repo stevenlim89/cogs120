@@ -1,5 +1,8 @@
 $(document).ready(function(){
 	initializeSquares();
+	initializeHide();
+	initializeNext();
+	initializePrevious();
 })
 	
 
@@ -57,4 +60,23 @@ function index_currMoment(curr_moment){
 	$("#day").html(index_days[curr_moment.day()]);
 	$("#date").html(curr_moment.date());
 	
+}
+
+function initializeHide(){
+	$('#tut_first').hide();
+}
+
+
+function initializeNext(){
+	$('#tut_next').click(function (){
+		$('#tut_second').hide();
+		$('#tut_first').show();
+	});
+}
+
+function initializePrevious(){
+	$('#tut_previous').click(function (){
+		$('#tut_first').hide();
+		$('#tut_second').show();
+	});
 }

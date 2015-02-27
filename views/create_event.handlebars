@@ -14,6 +14,7 @@
     <script src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
     <script src="bootstrap/js/bootstrap.js"></script>
     <script src="javascript/timepicki.js"></script>
+    <script src="javascript/breadCrumbs.js"></script>
     <script>
       $(document).ready(function () {
         $('#datepicker').datepicker({
@@ -27,28 +28,10 @@
 </head>
 
 <body>
-  <!-- This is the bar that will be at every page -->
-  <div class="containerHeader">
-    <div class="btn-group btn-group-lg">
-      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-        <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></button>
-        <ul class="dropdown-menu" role="menu">
-          <li><a href="settings" class="list" data-ajax="false">Settings</a></li>
-          <li><a href="help" class="list" data-ajax="false">Help</a></li>
-          <li><a href="/" class="list" data-ajax="false">Logout</a></li>
-        </ul>
-      </div>          
-         <h1 id="title"><center>Gruupster</h1>  
-  </div>
-  
+  {{> main_head}}
+  {{> breadCrumbs}}
   <div class="subContainer">
-
-    <ol class="breadcrumb">
-        <li><a href="homepage">Homepage</a></li>
-        <li><a href="gruupUp">GruupUp</a></li>
-        <li><a href='calendar'>Calendar</a></li>
-        <li><a href='editSchedule'>Schedule</a></li>
-      </ol>
+    
 
     <h2>Create Event</h2>
     <form action="processNewEvent" method="post">      

@@ -1,12 +1,10 @@
 .container{
-  background-color: #FF4D4D;
   height: 100%;
 }
 
 #title, #title:hover{
   text-decoration: none;
   color: white;
-  background-color: #FF4D4D;
 }
 
 #Menu{

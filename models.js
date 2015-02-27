@@ -9,6 +9,7 @@ var ProjectSchema = new mongoose.Schema({
 	"icon": String, 
 	"major": String,
 	"year": Number,
+	"firstVisit": Boolean,
 	"friend_array": Array,
 	"circle_array": Array,
 	"events": Array

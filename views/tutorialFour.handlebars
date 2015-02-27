@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Create Event</title>
+    <link href="css/index.css" rel="stylesheet"></link>
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet"></link>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="javascript/main.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('#datepicker').datepicker();
+      });
+    </script>
+</head>
+
+<body>
+  <!-- This is the bar that will be at every page -->
+  <div class="containerHeader">
+    <div class="btn-group btn-group-lg">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+        <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="gruupers" class="list" data-ajax="false">Gruupers</a></li>
+          <li><a href="notifications" class="list" data-ajax="false">Notifications</a></li>
+          <li><a href="profile" class="list" data-ajax="false">Profile</a></li>
+          <li><a href="settings" class="list" data-ajax="false">Settings</a></li>
+          <li><a href="help" class="list" data-ajax="false">Help</a></li>
+          <li><a href="/" class="list" data-ajax="false">Logout</a></li>
+        </ul>
+      </div>          
+        <a href="homepage" id="title" data-ajax="false"><h1><center>Gruupster</h1></a>  
+  </div>
+  
+  <div class="subContainer">
+
+    <ol class="breadcrumb">
+        <li><a href="homepage">Homepage</a></li>
+        <li><a href="gruupUp">GruupUp</a></li>
+        <li><a href='calendar'>Calendar</a></li>
+        <li><a href='editSchedule'>Schedule</a></li>
+      </ol>
+
+  <div class="jumbotron">
+    <div id="tut_second">
+      <h1><center>Create an Event!</center></h1>
+      <p>Perfect! Now it's time to make your first event. Fill out the fields below and submit!</p>
+    </div>
+    <div id="tut_first">
+      <h1><center>Now you're set!</center></h1>
+      <p>These are the major basics of the app. Feel free to use the app as you want and gruup up with friends with ease! If you ever find yourself needing more help, check out our help page in the menu bar above. Enjoy!</p>
+      <p><a class="btn btn-primary btn-lg" href="homepage" role="button">Get started!</a></p>
+    </div>
+    <nav>
+        <ul class="pager">
+          <li><a id= "tut_previous">Previous</a></li>
+          <li><a id= "tut_next">Next</a></li>
+        </ul>
+  </div> <!-- end of jumbotron -->      
+
+    <h2>Create Event</h2>
+    <form action="processNewEvent" method="post">      
+      <input placeholder="Title" type="text" name="title">*<br>      
+      <input placeholder="Add Friends" type="text" name="friends"><br>    
+      <input placeholder="Date" type="text" id="datepicker" data-date-format="mm/dd/yyyy" name="date">*
+      <fieldset data-role="controlgroup" data-type="horizontal">
+        <legend>* Start time:</legend>
+        <label for="start_hour"></label>
+        <select name="start_hour" id="start_hour">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>
+        <label for="start_minutes"></label>
+        <select name="start_minutes" id="start_minutes">
+            <option value="0">00</option>
+            <option value="5">05</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>            
+            <option value="25">25</option>
+            <option value="30">30</option>
+            <option value="35">35</option>
+            <option value="40">40</option>
+            <option value="45">45</option>
+            <option value="50">50</option>
+            <option value="55">55</option>
+        </select>
+        <label for="start_am_pm"></label>
+        <select name="start_am_pm" id="start_am_pm">
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>            
+        </select>
+      </fieldset>
+      <br>
+
+      <fieldset data-role="controlgroup" data-type="horizontal">
+        <legend>* End time:</legend>
+        <label for="end_hour"></label>
+        <select name="end_hour" id="end_hour">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>
+        <label for="end_minutes"></label>
+        <select name="end_minutes" id="end_minute">
+            <option value="0">00</option>
+            <option value="5">05</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>            
+            <option value="25">25</option>
+            <option value="30">30</option>
+            <option value="35">35</option>
+            <option value="40">40</option>
+            <option value="45">45</option>
+            <option value="50">50</option>
+            <option value="55">55</option>
+        </select>
+        <label for="end_am_pm"></label>
+        <select name="end_am_pm" id="end_am_pm">
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>            
+        </select>
+      </fieldset>
+      <br>
+      <input type="submit" value="Submit">
+      <input type="button" value="Cancel">
+    </form> 
+  </div>
+ 
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gruupers</title>
+    <link href="css/index.css" rel="stylesheet"></link>
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet"></link>
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="javascript/main.js"></script>
+</head>
+
+<body>
+
+  <!-- This is the bar that will be at every page -->
+  <div class="containerHeader">
+    <div class="btn-group btn-group-lg">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+        <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#" class="list" data-ajax="false">Gruupers</a></li>
+          <li><a href="notifications" class="list" data-ajax="false">Notifications</a></li>
+          <li><a href="profile" class="list" data-ajax="false">Profile</a></li>
+          <li><a href="settings" class="list" data-ajax="false">Settings</a></li>
+          <li><a href="help" class="list" data-ajax="false">Help</a></li>
+          <li><a href="/" class="list" data-ajax="false">Logout</a></li>
+        </ul>
+      </div>          
+        <a href="homepage" id="title" data-ajax="false"><h1><center>Gruupster</center></h1></a>  
+  </div>
+
+  <div class="subContainer">
+    <ol class="breadcrumb">
+        <li><a href="homepage">Homepage</a></li>
+        <li><a href="gruupUp">GruupUp</a></li>
+        <li><a href='calendar'>Calendar</a></li>
+        <li><a href='editSchedule'>Schedule</a></li>
+      </ol>
+  </div>
+  <hr>
+
+    <div class="jumbotron">
+      <div id="tut_second">
+        <h1><center>Here's your Gruuper's list!</center></h1>
+        <p>Gruuper's is our nickname for your fellow gruupster users and friends! Here you can add people to your Gruuper's list and create circles, aka groups with them. Start by clicking on the search bar and enter "Bob Gruup" or his ucsd email, bgruup@ucsd.edu and add him!</p>
+      </div>
+      <div id="tut_first">
+        <h1><center>Create an Event!</center></h1>
+        <p>Perfect! Now it's time to make your first event, click on the button below.</p>
+        <p><a class="btn btn-primary btn-lg" href="tutorialFour" role="button">Create Event</a></p>
+      </div>
+      <nav>
+        <ul class="pager">
+          <li><a id= "tut_previous">Previous</a></li>
+          <li><a id= "tut_next">Next</a></li>
+        </ul>
+      </nav>
+    </div> <!-- end of jumbotron -->
+
+    <div>
+      <form action="gruupers" method="post">
+          <center>Add Friend: <input type="text" name="addFriend"></center> <hr>
+          <center><input type="submit" value="Add"></center>
+      </form>
+      <div>
+        <p>{{addFriendMessage}}</p> 
+      </div>    
+  </div> 
+
+  {{#each friends}}  
+  <div class="myPanel">
+      <div class="heading">{{firstname}} {{lastname}}</div>
+          <div class="body1">
+          </div>
+  </div>
+  {{/each}}
+
+  
+</body>
+
+</html>

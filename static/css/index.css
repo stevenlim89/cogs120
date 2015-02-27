@@ -38,7 +38,7 @@ body{
 }
 
 .squares p{
-	font-size: 25px;
+	font-size: 25%;
 }
 .squareButtonsRight{
 	float: right;
@@ -49,21 +49,20 @@ body{
 }
 
 .squares .glyphicon{
-	font-size: 400%;
+	font-size: 200%;
 }
 
 #createSquare, #calSquare{
-	
+	padding: 50%;
 	display: inline-block;
 	vertical-align: bottom;
-	float: left;
 }
 
 #editSquare, #friendSquare{
 
+	padding: 50%;
 	display: inline-block;
 	vertical-align: bottom;
-	float: right;
 }
 #title, #title:hover{
 	text-decoration: none;
@@ -223,3 +222,16 @@ a.reset_time {
 	margin-top: 5px;
 	color: #000;
 }
+.container{
+	width: 100%;
+	padding-top: 5px;
+	padding-left: 0px;
+}
+#homeBC, #gruupUpBC, #calBC{
+	margin-left: 0;
+	font-size: 100%;
+	width: 25%;
+	font-color: white;
+	background-color: #009999;
+}
+

@@ -19,32 +19,21 @@
 
 <body>
 
-<div class="containerHeader">
-    <div class="btn-group btn-group-lg">
-      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-        <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></button>
-        <ul class="dropdown-menu" role="menu">
-          <li><a href="settings" class="list" data-ajax="false">Settings</a></li>
-          <li><a href="help" class="list" data-ajax="false">Help</a></li>
-          <li><a href="/" class="list" data-ajax="false">Logout</a></li>
-        </ul>
-      </div>          
-        <h1 id="title"><center>Gruupster</center></h1>  
-  </div>
+{{> main_head}}
 <br>
 
 <section class="squares">
   <div class="squareButtonsLeft">  
-    <span class="glyphicon glyphicon-pencil" aria-hidden="true" id="createSquare"></span><p>Gruup Up</p>
+    <span class="glyphicon glyphicon-pencil" aria-hidden="true" id="createSquare"></span>Gruup Up
   </div>
   <div class="squareButtonsRight">  
-    <span class="glyphicon glyphicon-edit" aria-hidden="true" id="editSquare"></span><p>Edit Events</p>
+    <span class="glyphicon glyphicon-edit" aria-hidden="true" id="editSquare"></span>Create Event
   </div>  
   <div class="squareButtonsLeft">  
-    <span class="glyphicon glyphicon-calendar" aria-hidden="true" id="calSquare"></span><p>Calendar</p>
+    <span class="glyphicon glyphicon-calendar" aria-hidden="true" id="calSquare"></span>Calendar
   </div>  
   <div class="squareButtonsRight">  
-    <span class="glyphicon glyphicon-user" aria-hidden="true" id="friendSquare"></span><p>Friends</p>  
+    <span class="glyphicon glyphicon-user" aria-hidden="true" id="friendSquare"></span>Friends  
   </div>  
 </section>
 

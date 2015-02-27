@@ -32,5 +32,10 @@ exports.processEvent = function (req, res) {
       });
      console.log("********This is the events array2:         " + emailMatch[0]);
   }
-	  	res.render("homepage");
+  if(emailMatch[0].firstVisited == true){
+    res.render("tutorialThree");
+  }
+  else{
+    res.render("calendar");
+  }
 }

@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    initializeBreadCrumbs();
 	initializePage();
     calculateEvents();
 })
@@ -28,6 +29,28 @@ function initializePage() {
         aspectRatio: 2
     }); 	
     }
+}
+
+function initializeBreadCrumbs(){
+    $("#homeBC").click(function(){
+        window.location = 'homepage';
+        return false;
+    });
+
+    $("#gruupUpBC").click(function(){
+        window.location = 'gruupUp';
+        return false;
+    });
+
+    $("#calBC").click(function(){
+        window.location = 'calendar';
+        return false;
+    });
+
+    $("#createEventBC").click(function(){
+        window.location = 'createEvent';
+        return false;
+    });
 }
 
 function calculateEvents(){

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Create Event</title>
+
+    <link href="css/index.css" rel="stylesheet"></link>
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet"></link>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" href="/resources/demos/style.css" />
+    
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="javascript/timepicki.js"></script>
+    <script src="javascript/breadCrumbs.js"></script>
+    <script src="javascript/main.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('#datepicker').datepicker({
+          altFormat: "yyyy-mm-dd"
+        });
+        $(".time_element").timepicki({
+          step_size_minutes:30
+        });
+      });
+    </script>
+</head>
+
+<body>
+  {{> main_head}}
+  {{> breadCrumbs}}
+  <div class="subContainer">
+    <div class="jumbotron">
+      <div id = "tut_second">
+        <h1><center>Create your schedule!</center></h1>
+        <p>Click on ... to edit your schedule. Your schedule can only be seen and editted by yourself. Click "next" once you finish your schedule!</p>
+      </div>
+      <div id = "tut_first">
+        <h1><center>Use of the Schedule</center></h1>
+        <p>Through your schedule, we can compare it with your friend's schedules when you create an event to find the optimal time(s) to meet with them! Before we create an event, we need to add a friend first.</p>
+        <p><a class="btn btn-primary btn-lg" href="tutorialThree" role="button">Learn More</a></p>
+      </div>
+      <nav>
+        <ul class="pager">
+          <li><a id= "tut_previous">Previous</a></li>
+          <li><a id= "tut_next">Next</a></li>
+        </ul>
+      </nav>
+    </div> <!-- end of jumbotron -->
+
+    <h2>Create Event</h2>
+    <form action="processNewEvent" method="post">      
+      <input placeholder="Title" type="text" name="title" />*<br>
+      <input placeholder="Date" type="text" id="datepicker" data-date-format="yyyy-mm-dd" name="date" />* <br> 
+
+      Start Time
+      <input type="text" name="timepickerStart" class="time_element"/>
+
+      End Time
+      <input type="text" name="timepickerEnd" class="time_element"/>
+      
+      <br>
+      <input type="submit" value="Submit">
+      <input type="button" value="Cancel">
+    </form> 
+  </div>
+ 
+</body>
+
+</html>

@@ -5,9 +5,6 @@
 		var defaults = {
 			format_output: function(tim, mini, meri) {
 				if(settings.show_meridian){
-					if(meri == "PM"){
-						tim = (tim + 12)%12;
-					}
 					return tim + ":" + mini + ":" + "00";
 				}else{
 					return tim + ":" + mini + ":00";
@@ -243,7 +240,7 @@
 				} else {
 					d = new Date();
 					ti = d.getHours();
-					mi = d.getMinutes();
+					mi = 0;
 					mer = "AM";
 					if (12 < ti  && settings.show_meridian) {
 						ti -= 12;
