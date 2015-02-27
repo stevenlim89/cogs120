@@ -22,7 +22,7 @@ body{
 }
 
 .squares{
-	padding: 50px;
+	padding: 3%;
 	display: inline-block;
 	opacity: .6;
 	background-repeat: no-repeat;
