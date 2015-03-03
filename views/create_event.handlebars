@@ -12,9 +12,9 @@
     
     <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
-    <script src="bootstrap/js/bootstrap.js"></script>
     <script src="javascript/timepicki.js"></script>
     <script src="javascript/breadCrumbs.js"></script>
+
     <script>
       $(document).ready(function () {
         $('#datepicker').datepicker({
@@ -25,13 +25,13 @@
         });
       });
     </script>
+    <script src="bootstrap/js/bootstrap.js"></script>
 </head>
 
 <body>
   {{> main_head}}
-  {{> breadCrumbs}}
   <div class="subContainer">
-    
+    {{> breadCrumbs}}
 
     <h2>Create Event</h2>
     <form action="processNewEvent" method="post">      
@@ -40,7 +40,7 @@
 
       Start Time
       <input type="text" name="timepickerStart" class="time_element"/>
-
+      <br>
       End Time
       <input type="text" name="timepickerEnd" class="time_element"/>
       

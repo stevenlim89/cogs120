@@ -13,10 +13,8 @@
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="fullcalendar/lib/moment.min.js"></script> 
     <script src="fullcalendar/fullcalendar.js"></script>
-  <!--  <script src="http://code.jquery.com/jquery-1.10.2.js"></script> -->
     <script src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>    
     <script src="javascript/calendar.js"></script>
-    <script src="javascript/breadCrumbs.js"></script>
     <script src="bootstrap/js/bootstrap.js"></script>
 
     <script>
@@ -31,7 +29,13 @@
   {{> main_head}}
   
   <div class="subContainer">
-    {{> breadCrumbs}}
+    <div class="btn-group btn-group-center" id="breadCrumbButtons">
+      <div class="containerBC">
+        <button type="button" class="btn btn-primary" id="homeBC">Homepage</button>
+        <button type="button" class="btn btn-primary" id="createEventBC">Create Event</button>
+        <button type="button" class="btn btn-primary" id="calBC">Calendar</button>
+      </div>
+  </div>
     
     <h2>Gruup Up</h2>
     <form action="processGruupUp" method="post" id="gruupUpForm">

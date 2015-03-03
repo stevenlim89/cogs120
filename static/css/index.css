@@ -225,18 +225,17 @@ a.reset_time {
 	margin-top: 5px;
 	color: #000;
 }
-.container{
+.containerBC{
 	width: 100%;
-	padding-top: 5px;
-	padding-left: 0px;
+	margin-left: 10%;
 }
+
 #homeBC, #gruupUpBC, #calBC, #createEventBC{
-	margin-left: 0;
-	font-size: 100%;
-	width: 25%;
+	font-size: inherit;
+	font-family: inherit;
+	width: 32%;
 	font-color: white;
 	background-color: #009999;
-	margin-left: 1.5%;
 }
 a{
 	color: inherit;
@@ -248,4 +247,3 @@ a:hover
      text-decoration:none; 
      cursor:pointer;  
 }
-
