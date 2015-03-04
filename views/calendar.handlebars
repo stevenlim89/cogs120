@@ -36,6 +36,34 @@
 
   <div id="calendar"></div>
 
+  {{calendarMessage}}
+  <div id="calendarModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="eventModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form action="processEventModal" method="post">
+          <div class="modal-header">
+            <h1>Event Title: </h1><h2 id="modalTitle"></h2>
+            <input type="hidden" name="title" id="hiddenTitle"/>
+          </div>
+          <div class="modal-body">
+            <center>Event will start at: 
+            <p id="modalStart"></p>
+            <input type="hidden" name="startTime" id="hiddenStart"/>
+            <br>
+            Event will end at:
+            <p id="modalEnd"></p></center>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+            <input type="submit" value="Delete" name="action">
+            <input type="submit" value="Edit" name="action">
+          </div>  
+        </form>
+      </div>
+    </div>
+  </div>  
+
+
   
    
 </body>

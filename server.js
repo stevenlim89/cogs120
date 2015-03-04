@@ -30,6 +30,7 @@ var tutorial1 = require('./routes/tutorialOne');
 var tutorial2 = require('./routes/tutorialTwo');
 var tutorial3 = require('./routes/tutorialThree');
 var tutorial4 = require('./routes/tutorialFour');
+var eventModal = require('./routes/processEventModal');
 
 var mongoose = require('mongoose');
 var connect_mongo = require('connect-mongo')(express);
@@ -97,6 +98,7 @@ server.post('/newPost', sub.signup);
 server.post('/processLogin', processLogin.authenticate);
 server.post('/processAddFriend', addFriend.add);
 server.post('/processGruupUp', gruupUp.calculate);
+server.post('/processEventModal', eventModal.processAction);
 
 // Start the server
 http.createServer(server).listen(server.get('port'), function(){

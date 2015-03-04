@@ -30,7 +30,13 @@ exports.gruup = function(req, res){
 						}
 						else{
 							console.log("************ARRAY:   " + foundFriend);
-							addFriendMessage = "Friend found";
+							if(friendsArr.length <= 0){
+								addFriendMessage = "No friend found. Go add some friends";
+							}
+							else{
+								addFriendMessage = "";
+							}
+								
 							if(result[0].firstVisit == true){
 								res.render('tutorialThree', {"friends": foundFriend, "addFriendMessage": addFriendMessage});
 							}

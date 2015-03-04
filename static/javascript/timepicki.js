@@ -5,9 +5,9 @@
 		var defaults = {
 			format_output: function(tim, mini, meri) {
 				if(settings.show_meridian){
-					return tim + ":" + mini + ":" + "00";
+					return tim + ":" + mini + ":" + "00" + "-" + meri;
 				}else{
-					return tim + ":" + mini + ":00";
+					return tim + ":" + mini + ":00" + "-" + meri;
 				}
 			},
 			increase_direction: 'down',

@@ -7,6 +7,7 @@ exports.processEvent = function (req, res) {
   var Model = mongoose.model('Project', models.ProjectSchema);
 
   var date = processEventObject.date;
+
   var startTime = processEventObject.timepickerStart;
   var endTime = processEventObject.timepickerEnd;
 

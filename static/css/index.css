@@ -247,3 +247,20 @@ a:hover
      text-decoration:none; 
      cursor:pointer;  
 }
+
+.gruupUpCheckbox{
+	border: 1px solid Transparent;
+}
+
+#gruupUpContent{
+	padding: 20px;
+}
+
+.visibility-none {
+	visibility: hidden;
+}
+
+.element-selected{
+	background-color: #009999;
+	color: white;
+}

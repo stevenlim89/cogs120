@@ -9,7 +9,7 @@ function initializePage() {
     var d = date.getDate();
     var m = date.getMonth();
     var day = date.getDay();
-
+    var split;
  	var userEvents;
     $.get('/putEvents', callback);
 
@@ -18,16 +18,37 @@ function initializePage() {
         userEvents = result;
 
 		for(var i = 0; i < result.length; i++){
+            split = result[i].start.split('-');
+            console.log(split[0]);
 			userEvents[i] = result[i];
 		}    
-		$('#calendar').fullCalendar({
 
-        editable: true,
-        weekMode: 'liquid',
-        url: '#',
-        events: userEvents,
-        aspectRatio: 2
-    }); 	
+		$('#calendar').fullCalendar({
+            header: {
+                left: 'prev,next',
+                center: 'title',
+                right: 'month,agendaDay'
+            },
+            dayClick: function(date, allDay, jsEvent, view){
+                $('#calendar').fullCalendar('gotoDate', date);
+                $('#calendar').fullCalendar('changeView', 'agendaDay');
+            },
+            eventClick: function(calEvent, jsEvent, view){
+                $('#hiddenTitle').val(calEvent.title);
+                $('#hiddenStart').val(calEvent.start);
+                $('#modalTitle').html(calEvent.title);
+                var startString = calEvent.start.format("ddd, MMM Do, h:mm");
+                var endString = calEvent.end.format("ddd, MMM Do, h:mm");
+                $('#modalStart').html(startString);
+                $('#modalEnd').html(endString);
+                $('#calendarModal').modal('show');
+                
+            },
+            editable: true,
+            weekMode: 'liquid',
+            url: '#',
+            events: userEvents
+        });
     }
 }
 
@@ -56,6 +77,21 @@ function initializeBreadCrumbs(){
 function calculateEvents(){
     $('#gruupUpSubmit').click(function(e){
         e.preventDefault();
+        if( $('input:checked').length <= 0 ) {
+            var gruupUpPulseCtr = 0;
+            $('#gruupUpAlert').text( "Don't forget to add friends.." ).show().fadeOut(6000);
+            while( gruupUpPulseCtr < 2 ) {
+              pulse();
+            }
+            return;
+        }        
+
+        function pulse(gruupUpPulseElement){
+          $('.gruupUpCheckbox').delay(700).animate({'border-color':'Red'}, 100)
+          .delay(700).animate({'border-color': 'Transparent'}, 100);
+          gruupUpPulseCtr++;
+        }
+
         var dateFromForm = $('#gruupUpForm').serializeArray();
 
         $.post('/processGruupUp', dateFromForm, function(data){
@@ -103,7 +139,11 @@ function calculateEvents(){
             convertedTimeArray = showEventsModal(data[data.length - 1], timeArray);
 
             $('#gruupUpCalendar').fullCalendar({
-                header: { center: 'title'},
+                header: {  
+                    left: 'none',
+                    center: 'title',
+                    right: 'none'
+                },
                 defaultDate: data[data.length - 1],
                 defaultView: 'agendaDay',                
                 selectable: true,

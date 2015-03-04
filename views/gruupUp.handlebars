@@ -19,7 +19,19 @@
 
     <script>
       $(document).ready(function () {
-        $('#datepicker').datepicker(); 
+        $('#datepicker').datepicker();
+        $('.gruupUpCheckbox').children('input').prop("checked", 0);
+
+        $('#addNewFriends').click( function () {
+          location.href = "gruupers";
+        });
+
+        $('.gruupUpCheckbox').click( function () {
+          var gruupUpBoxes = $(this).children('input');
+          gruupUpBoxes.prop("checked", !gruupUpBoxes.prop("checked"));
+          $(this).toggleClass('element-selected');
+
+        });
       })
     </script>
 
@@ -37,28 +49,37 @@
       </div>
   </div>
     
+    {{#if listOfFriends}}
     <h2>Gruup Up</h2>
-    <form action="processGruupUp" method="post" id="gruupUpForm">
+    <div id="gruupUpContent">
+      <form action="processGruupUp" method="post" id="gruupUpForm">
 
-      Select Date
-      <input placeholder="Date" type="text" id="datepicker" data-date-format="mm/dd/yyyy" name="date"> *              
-      
-      <br>
+        Select Date
+        <input placeholder="Date" type="text" id="datepicker" data-date-format="mm/dd/yyyy" name="date"> *              
+        
+        <br>
 
-      Select Friends
+        Select Friends
 
-      {{#each listOfFriends}}
-      <div class="checkbox">
-        <label><input type="checkbox" name="{{email}}" value="{{email}}">{{firstname}} {{lastname}}</label>
+        {{#each listOfFriends}}
+        <div class="gruupUpCheckbox">
+          <input type="checkbox" name="{{email}}" value="{{email}}" class="selectedFriends visibility-none"><label for="{{email}}">{{firstname}} {{lastname}}</label>
+        </div>
+        {{/each}}
+
+        <input type="button" value="Submit" id="gruupUpSubmit">
+        <input type="button" value="Cancel">
+      </form> 
+      <p>* = required</p>
+      <span id="gruupUpAlert"></span> 
+  {{else}}
+      <div>
+        <p> To GruupUp, you're going to need some friends! </p>
+        <button id="addNewFriends">Add Friend now!</button>
       </div>
-      {{/each}}
-
-      <input type="button" value="Submit" id="gruupUpSubmit">
-      <input type="button" value="Cancel">
-    </form> 
-
-    <div id="gruupUpCalendar"></div>
-  </div>
+      </div>
+      {{/if}} 
+      <div id="gruupUpCalendar"></div>
  
 </body>
 
