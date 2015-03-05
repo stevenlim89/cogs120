@@ -1,37 +1,31 @@
 
-/**
-
- */
-// Express is a web framework for node.js
-// that makes nontrivial applications easier to build
 var express = require('express');
 var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars');
 
-var index1 = require('./routes/index');
+// Routes that will be just for rendering pages
 var calendar1 = require('./routes/calendar');
-var notificationsScreen = require('./routes/notifications');
 var create_event = require('./routes/create_event');
 var gruupers_page = require('./routes/gruupers');
 var help_page = require('./routes/help');
 var setupEventScreen = require('./routes/login');
 var signEventScreen = require('./routes/signup');
-var viewEventScreen = require ('./routes/profile');
-var editSched = require ('./routes/editSchedule');
-var settingsPage = require('./routes/settings');
-var processNewEvent = require('./routes/processNewEvent');
-var processLogin = require('./routes/processLogin');
 var home = require('./routes/homepage');
-var putEvents = require('./routes/putEvents');
-var sub = require('./routes/submit');
-var addFriend = require('./routes/processAddFriend');
-var gruupUp = require('./routes/gruupUp');
+var settingsPage = require('./routes/settings');
 var tutorial1 = require('./routes/tutorialOne');
 var tutorial2 = require('./routes/tutorialTwo');
 var tutorial3 = require('./routes/tutorialThree');
 var tutorial4 = require('./routes/tutorialFour');
 var eventModal = require('./routes/processEventModal');
+
+// Routes to transmit and access data
+var processNewEvent = require('./routes/processNewEvent');
+var processLogin = require('./routes/processLogin');
+var putEvents = require('./routes/putEvents');
+var sub = require('./routes/submit');
+var addFriend = require('./routes/processAddFriend');
+var gruupUp = require('./routes/gruupUp');
 
 var mongoose = require('mongoose');
 var connect_mongo = require('connect-mongo')(express);
@@ -41,6 +35,7 @@ var connect_mongo = require('connect-mongo')(express);
 var local_database_uri  = 'mongodb://steven:hello@ds045021.mongolab.com:45021/heroku_app33594023';
 var database_uri = process.env.MONGOLAB_URI || local_database_uri;
 mongoose.connect(database_uri);
+
 // Create the server instance
 var server = express();
 
@@ -76,15 +71,11 @@ if ('development' == server.get('env')) {
 // Routes to render pages
 server.get('/', setupEventScreen.setup);
 server.get('/calendar', calendar1.cal);
-server.get('/today', index1.view);
 server.get('/homepage', home.main);
-server.get('/notifications', notificationsScreen.screenView);
 server.get('/createEvent', create_event.create);
 server.get('/gruupers', gruupers_page.gruup);
 server.get('/help', help_page.helpList);
 server.get('/signup', signEventScreen.sign);
-server.get('/profile', viewEventScreen.view);
-server.get('/editSchedule', editSched.editSchedule);
 server.get('/settings', settingsPage.setting);
 server.get('/gruupUp', gruupUp.view);
 server.get('/tutorialOne', tutorial1.tutorialone);
