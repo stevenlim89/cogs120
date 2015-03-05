@@ -10,6 +10,7 @@ function initializePage() {
     var m = date.getMonth();
     var day = date.getDay();
     var split;
+    var split2;
  	var userEvents;
     $.get('/putEvents', callback);
 
@@ -19,7 +20,7 @@ function initializePage() {
 
 		for(var i = 0; i < result.length; i++){
             split = result[i].start.split('-');
-            console.log(split[0]);
+            split2 = result[i].end.split('-');
 			userEvents[i] = result[i];
 		}    
 
@@ -36,9 +37,11 @@ function initializePage() {
             eventClick: function(calEvent, jsEvent, view){
                 $('#hiddenTitle').val(calEvent.title);
                 $('#hiddenStart').val(calEvent.start);
+                $('#hiddenEnd').val(calEvent.end);
+                
                 $('#modalTitle').html(calEvent.title);
-                var startString = calEvent.start.format("ddd, MMM Do, h:mm");
-                var endString = calEvent.end.format("ddd, MMM Do, h:mm");
+                var startString = calEvent.start.format("ddd, MMM Do, h:mm a");
+                var endString = calEvent.end.format("ddd, MMM Do, h:mm a");
                 $('#modalStart').html(startString);
                 $('#modalEnd').html(endString);
                 $('#calendarModal').modal('show');

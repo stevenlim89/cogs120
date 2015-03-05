@@ -1,9 +1,9 @@
 var models = require('../models');
 var mongoose = require('mongoose');
+var moment = require('../moment');
 exports.authenticate = function(req, res){
 	userInput = req.body;
-	console.log(userInput);
-
+	var newArr = [];
 	req.session.loginInfo = userInput.email;
 	var Model = mongoose.model('Project', models.ProjectSchema);
 	models.Project
@@ -16,7 +16,6 @@ exports.authenticate = function(req, res){
 		}
 		else{
 			if((emailMatch[0].email == (""+userInput.email)) && (emailMatch[0].password == (""+userInput.password))){
-				//console.log("***********userinfo:    "+ emailMatch[0]);
 				if(emailMatch[0].firstVisit == true){
 					Model.findOne({email: emailMatch[0].email}, function(err, doc){
 			          //doc.firstVisit = false;
@@ -25,11 +24,20 @@ exports.authenticate = function(req, res){
 					res.render('tutorialOne');
 				}
 				else{
-					res.render('homepage');
+					newArr = emailMatch[0].events;
+					/*for(var i = 0; i < emailMatch[0].events.length; i++){
+						var dataMoment = moment(emailMatch[0].events[i].start);
+						var difference = dataMoment.diff(moment(new Date()));
+						if(difference == 0){
+							newArr.push(emailMatch[0].events[i]);
+						}
+					}*/
+					res.render('homepage', {"listEvents": newArr});
 				}	
 			}				
-			else
+			else{
 				res.render('login', {errMsg: "Wrong information or signup"});
+			}	
 		}	
 	}
 }

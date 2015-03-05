@@ -1,3 +1,4 @@
+
 /**
 
  */
@@ -93,6 +94,7 @@ server.get('/tutorialFour', tutorial4.tutorialfour);
 
 // Routes to process and send information 
 server.get('/putEvents', putEvents.onCal);
+server.get('/retrieveEvents', putEvents.getEvents);
 server.post('/processNewEvent', processNewEvent.processEvent); 
 server.post('/newPost', sub.signup);
 server.post('/processLogin', processLogin.authenticate);

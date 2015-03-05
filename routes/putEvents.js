@@ -1,4 +1,5 @@
 var models = require('../models');
+var mongoose = require('mongoose');
 
 exports.onCal = function(req, res){
 	var email = req.session.loginInfo;
@@ -9,7 +10,6 @@ exports.onCal = function(req, res){
 	function gatherEvents(err, user){
 		if(!err){
 			if(typeof(user[0]) != 'undefined'){
-				console.log("What was sent:      " + user[0].events);
 				res.json(user[0].events);
 			}
 			else{
@@ -20,4 +20,12 @@ exports.onCal = function(req, res){
 			res.send("Error");
 		}
 	}	
+};
+
+exports.getEvents = function(req, res){
+	var receivedDate = req.params("getDate");
+	var Model = mongoose.model('Project', models.ProjectSchema);
+	Model.find({email: req.session.loginInfo}, function(err, doc){
+		res.json(doc.events);
+	});
 };

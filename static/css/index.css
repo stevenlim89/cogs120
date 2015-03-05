@@ -225,15 +225,16 @@ a.reset_time {
 	margin-top: 5px;
 	color: #000;
 }
-.containerBC{
-	width: 100%;
-	margin-left: 10%;
+
+#breadCrumbButtons{
+	width: 100%; 
 }
 
 #homeBC, #gruupUpBC, #calBC, #createEventBC{
 	font-size: inherit;
 	font-family: inherit;
-	width: 32%;
+	width: 30%;
+	margin: 1%;
 	font-color: white;
 	background-color: #009999;
 }
@@ -262,5 +263,9 @@ a:hover
 
 .element-selected{
 	background-color: #009999;
+	color: white;
+}
+
+.modal-footer > .btn{
 	color: white;
 }

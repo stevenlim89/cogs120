@@ -3,10 +3,52 @@ $(document).ready(function(){
 	initializeHide();
 	initializeNext();
 	initializePrevious();
+	woopraTest();
 })
 	
+function woopraTest(){
+	$("#todaySection").hide();
+	$("#featuresPage").toggleClass("active");
 
+	$("#todayPage").click(function(){
+		$('.squares').hide();
+		$("#todaySection").show();
+		$("#featuresPage").toggleClass("active");
+		$("#todayPage").toggleClass("active");
+		woopra.track("today_page");
+		todayViewInit();
+	});
 
+	$("#featuresPage").click(function(){
+		$('.squares').show();
+		$("#todaySection").hide();
+		$("#featuresPage").toggleClass("active");
+		$("#todayPage").toggleClass("active");
+		woopra.track("features_page");
+	});		
+}
+
+function todayViewInit(){
+	$.get('/putEvents', callback);
+
+	function callback(result){
+		console.log("@@@@@@@REsult:   ");
+		console.log(result);
+		$('#dayCalendar').fullCalendar({
+          header: {
+                  left: 'prev',
+                  center: 'title',
+                  right: 'next'
+          },
+          defaultView: 'agendaDay',
+          editable: true,
+          weekMode: 'liquid',
+          url: '#',
+          events: result
+      });
+		
+	}
+}
 function initializeSquares(){
 	$("#createSquare").click(function(){
 		window.location = 'gruupUp';
@@ -29,6 +71,24 @@ function initializeSquares(){
 	});
 	
 }
+
+function retrieveEvents(date){
+	var currDayEvents = [];
+	$.get('retrieveEvents', {"getDate": date}, function(data){
+		console.log(data);
+		for(var i = 0; i < data.length; i++){
+			var dataMoment = moment(data[i].start);
+			var difference = dataMoment.differ(moment(date));
+			if(difference == 0){
+				currDayEvents.push(data[i]);
+			}
+		}
+		
+	});
+
+
+}
+
 function index_init(){
 
 	var index_moment = moment();
@@ -37,16 +97,19 @@ function index_init(){
 	$("#arrowLeft").click(function(){
 		index_moment.subtract("1", "days");
 		index_currMoment(index_moment);
+		retrieveEvents(index_moment);
 	});
 
 	$("#arrowRight").click(function(){
 		index_moment.add("1", "days");
 		index_currMoment(index_moment);
+		retrieveEvents(index_moment);
 	});
 
 	$("#index_today_button").click(function(){
 		index_moment = moment();
 		index_currMoment(index_moment);
+		retrieveEvents(index_moment);
 	});
 }
 
