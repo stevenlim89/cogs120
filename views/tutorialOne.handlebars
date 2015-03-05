@@ -18,7 +18,8 @@
       $(document).ready(function () {
         $("#title").html("Tutorial 1");
       })
-    </script>  
+    </script>
+    {{> woopra_test_script}}  
   </head>
 
 <body>
@@ -28,21 +29,11 @@
 
 <div class="jumbotron">
   <h3><center>Welcome to Gruupster!</center></h3>
-  <p><center>This is an app that makes scheduling for you and your friends easy! Start by creating your own schedule and click on "Create Event."</center></p>
-  <p><a class="btn btn-primary btn-lg" href="tutorialTwo" role="button">Create Event</a></p>
+  <p><center>This is an app that makes scheduling for you and your friends easy! Start by creating your own schedule and click on "Create Event."<em>If you skip the tutorial, you can revisit it in the help page.</em></center></p>
+  <p><button class="btn btn-primary btn-lg" role="button" id="ceButton">Create Event</button>
+   <a href="homepage" role="button" id="skipButton1">Skip Tutorial</a> 
+  <button class="btn btn-danger btn-lg" role="button" id="skipButton2">Skip Tutorial</button></p>
 </div> <!-- end of jumbotron -->
-
-<section class="icon squares" >
-      <div class="iconLeft"> 
-        <a href = "gruupUp" ><img src="images/GruupUp.png" class="iconTop" alt="GruupUp Icon"/></a> 
-        <a href = "calendar" class="iconBottom"><img src="images/Calendar.png" alt="Calendar Icon"/></a> 
-      </div>
-      <div class="iconRight">
-        <a href = "create_event" ><img src="images/Create_Event.png" class="iconTop" alt="Create Event Icon"/></a>  
-        <a href = "gruupers" class="iconBottom"><img src="images/Gruupers.png" alt="Gruupers Icon"/></a>
-      </div>  
-</section>
-
 
 </div>    
 </body>

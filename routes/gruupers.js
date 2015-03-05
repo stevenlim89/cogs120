@@ -38,9 +38,7 @@ exports.gruup = function(req, res){
 							if(result[0].firstVisit == true){
 								res.render('tutorialThree', {"friends": foundFriend, "addFriendMessage": addFriendMessage});
 							}
-							else{
-							console.log("############");
-							console.log(foundFriend);	
+							else{	
 								res.render('gruupers', {"friends": foundFriend, "addFriendMessage": addFriendMessage});	
 							}						
 						}	

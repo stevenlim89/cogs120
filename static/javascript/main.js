@@ -3,9 +3,30 @@ $(document).ready(function(){
 	initializeHide();
 	initializeNext();
 	initializePrevious();
-	woopraTest();
 	settingsListener();
+	woopraTutorialTest();
 })
+
+function woopraTutorialTest(){
+
+	var random_num = Math.random();
+
+	if(random_num > 0.5){
+	    $("#skipButton1").hide();
+	}else{
+	    $("#skipButton2").hide();
+	}
+	$("#skipButton1").click(function(){
+		woopra.track("skip_button_one");
+		window.location = 'tutorialTwo';
+	});
+
+	$("#skipButton2").click(function(){
+		woopra.track("skip_button_two");
+		window.location = 'homepage';
+	});
+}
+
 function settingsListener(){
  $('#settingsModal').modal('hide');
 
@@ -64,49 +85,6 @@ function settingsListener(){
  });
 }
 
-function woopraTest(){
-	$("#todaySection").hide();
-	$("#featuresPage").toggleClass("active");
-
-	$("#todayPage").click(function(){
-		$('.squares').hide();
-		$("#todaySection").show();
-		$("#featuresPage").toggleClass("active");
-		$("#todayPage").toggleClass("active");
-		woopra.track("today_page");
-		todayViewInit();
-	});
-
-	$("#featuresPage").click(function(){
-		$('.squares').show();
-		$("#todaySection").hide();
-		$("#featuresPage").toggleClass("active");
-		$("#todayPage").toggleClass("active");
-		woopra.track("features_page");
-	});		
-}
-
-function todayViewInit(){
-	$.get('/putEvents', callback);
-
-	function callback(result){
-		console.log("@@@@@@@REsult:   ");
-		console.log(result);
-		$('#dayCalendar').fullCalendar({
-          header: {
-                  left: 'prev',
-                  center: 'title',
-                  right: 'next'
-          },
-          defaultView: 'agendaDay',
-          editable: true,
-          weekMode: 'liquid',
-          url: '#',
-          events: result
-      });
-		
-	}
-}
 function initializeSquares(){
 	$("#createSquare").click(function(){
 		window.location = 'gruupUp';

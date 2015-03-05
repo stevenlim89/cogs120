@@ -17,9 +17,6 @@ exports.authenticate = function(req, res){
 		else{
 			if((emailMatch[0].email == (""+userInput.email)) && (emailMatch[0].password == (""+userInput.password))){
 				if(emailMatch[0].firstVisit == true){
-					Model.findOne({email: emailMatch[0].email}, function(err, doc){
-			          doc.save();
-      				});
 					res.render('tutorialOne');
 				}
 				else{
