@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Create Event</title>
+    <title>Gruupster</title>
 
     <link href="css/index.css" rel="stylesheet"></link>
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet"></link>
@@ -16,28 +16,39 @@
     <script src="javascript/breadCrumbs.js"></script>
     <script src="javascript/createEvent.js"></script>
     <script src="bootstrap/js/bootstrap.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#title").html("Create Event");
+      })
+    </script>    
 </head>
 
 <body>
   {{> main_head}}
   <div class="subContainer">
     {{> breadCrumbs}}
-
-    <h2>Create Event</h2>
+    <center>
     <form action="processNewEvent" method="post">      
-      <input placeholder="Title" type="text" name="title" value="{{modalTitle}}"/>*<br>
-      <input placeholder="Date" type="text" id="datepicker" data-date-format="yyyy-mm-dd" name="date" value="{{modalDate}}"/>* <br> 
+      <input placeholder="Title" type="text" name="title" value="{{modalTitle}}"/>*
 
-      Start Time
-      <input type="text" name="timepickerStart" class="time_element" value="{{modalStartTime}}"/>
+      <input placeholder="Date" type="text" id="datepicker" data-date-format="yyyy-mm-dd" name="date" value="{{modalDate}}"/>* 
+
       <br>
-      End Time
-      <input type="text" name="timepickerEnd" class="time_element" value="{{modalEndTime}}"/>
-      
-      <br>
+      <br> 
+
+      <div>
+        Start Time
+        <input type="text" name="timepickerStart" class="time_element" value="{{modalStartTime}}"/>
+        <br>
+        End Time
+        <input type="text" name="timepickerEnd" class="time_element" value="{{modalEndTime}}"/>
+        
+        <br>
+      </div>
       <input type="submit" value="Submit">
       <input type="button" value="Cancel">
-    </form> 
+    </form>
+    </center> 
   </div>
  
 </body>
