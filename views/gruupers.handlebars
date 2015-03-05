@@ -10,6 +10,7 @@
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="javascript/breadCrumbs.js"></script>
+    <script src="javascript/deleteFriend.js"></script>
     <script src="bootstrap/js/bootstrap.js"></script>
     <script>
       $(document).ready(function () {
@@ -26,24 +27,27 @@
   </div>
   <hr>
 
+  <form action="processAddFriend" method="post">
   <div>
-      <form action="processAddFriend" method="post">
+      
           <center>Add Friend: <input type="text" name="addFriend"></center> <hr>
-          <center><input type="submit" value="Add"></center>
-      </form>
+          <center><input type="submit" class="btn" value="Add"></center>
+      
       <div>
         <p>{{addFriendMessage}}</p> 
       </div>    
   </div> 
+  </form>
 
-  {{#each friends}}  
-  <div class="myPanel">
-      <div class="heading">{{firstname}} {{lastname}}</div>
-          <div class="body1">
-          </div>
-  </div>
-  {{/each}}
-
+    <h2> Friends List: </h2>
+    {{#each friends}}  
+    <div class="myPanel">
+        <div class="heading">{{firstname}} {{lastname}} <button class="btn deleteFriend" id="{{email}}">Delete</button>
+            <div class="body1">
+            </div>
+        </div>
+    </div>
+    {{/each}}
   
 </body>
 

@@ -82,6 +82,7 @@ server.get('/tutorialOne', tutorial1.tutorialone);
 server.get('/tutorialTwo', tutorial2.tutorialtwo);
 server.get('/tutorialThree', tutorial3.tutorialthree);
 server.get('/tutorialFour', tutorial4.tutorialfour);
+server.get('/about', setupEventScreen.about);
 
 // Routes to process and send information 
 server.get('/putEvents', putEvents.onCal);
@@ -92,6 +93,9 @@ server.post('/processLogin', processLogin.authenticate);
 server.post('/processAddFriend', addFriend.add);
 server.post('/processGruupUp', gruupUp.calculate);
 server.post('/processEventModal', eventModal.processAction);
+server.post('/processDeleteFriend', addFriend.deleteFriend);
+server.post('/processSettingsNames', settingsPage.updateNames);
+server.post('/processSettingsPass', settingsPage.updatePass);
 
 // Start the server
 http.createServer(server).listen(server.get('port'), function(){

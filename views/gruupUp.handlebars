@@ -20,7 +20,9 @@
     <script>
       $(document).ready(function () {
         $("#title").html("GruupUp");
-
+        $('#cancelButton').click(function(){
+          location.href = "homepage";
+        });
         $('#datepicker').datepicker();
         $('.gruupUpCheckbox').children('input').prop("checked", 0);
 
@@ -59,17 +61,18 @@
         <input placeholder="Date" type="text" id="datepicker" data-date-format="mm/dd/yyyy" name="date"> *              
         
         <br>
+        <br>
 
         Select Friends
 
         {{#each listOfFriends}}
         <div class="gruupUpCheckbox">
-          <input type="checkbox" name="{{email}}" value="{{email}}" class="selectedFriends visibility-none"><label for="{{email}}">{{firstname}} {{lastname}}</label>
+          <input type="checkbox" name="{{email}}" value="{{email}}" class="selectedFriends visibility-none"><center><label for="{{email}}">{{firstname}} {{lastname}}</label></center>
         </div>
         {{/each}}
-
+        <br>
         <input type="button" value="Submit" id="gruupUpSubmit">
-        <input type="button" value="Cancel">
+        <input type="button" value="Cancel" id="cancelButton">
       </form> 
       <p>* = required</p>
       <span id="gruupUpAlert"></span> 

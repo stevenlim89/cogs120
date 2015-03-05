@@ -4,8 +4,66 @@ $(document).ready(function(){
 	initializeNext();
 	initializePrevious();
 	woopraTest();
+	settingsListener();
 })
-	
+function settingsListener(){
+ $('#settingsModal').modal('hide');
+
+ $('.settingsPassword').keyup(function () {
+  var newpass1 = $("[name='updateNewPassword1']").val();
+  var newpass2 = $("[name='updateNewPassword2']").val();
+  
+  if(!(newpass1 === newpass2)) {
+   $('#settingsPassMessage')
+   .html('Please make sure that the new passwords match').css("color","red").show();
+  }
+  else {
+   $('#settingsPassMessage')
+   .html('Please make sure that the new passwords match').css("color","red").fadeOut();
+  }
+ });
+
+ $('#headerSettings').click(function (events){
+  $('#settingsModal').modal('show');  
+ });
+
+ $('#updateNamesButton').click(function (events) {  
+  var updateInfoForm = $('#updateSettingsForm').serializeArray();
+  var updateFirstName = updateInfoForm[0].value;
+  var updateLastName = updateInfoForm[1].value;  
+
+  if( (updateFirstName.length == 0 && updateLastName == 0) ) {
+   $('#settingsNamesMessage').html("You can update your first name, last name or both.").show();
+  } else {
+   $('#settingsNamesMessage').html("You can update your first name, last name or both.").fadeOut();
+   $.post('/processSettingsNames', updateInfoForm, function(callbackMsg) {
+    $('#settingsMessage').html(callbackMsg).show();
+   });
+  }
+ });
+
+ $('#updatePassButton').click(function (events) {  
+  var updateInfoForm = $('#updateSettingsForm').serializeArray();  
+  var updateCurrPass = updateInfoForm[2].value;
+  var updateNewPass1 = updateInfoForm[3].value;
+  var updateNewPass2 = updateInfoForm[4].value;
+
+  if( updateCurrPass.length == 0 ) {   
+   $('#settingsPassMessage').html("You must enter your current password.").css("color","red").show();
+
+  } else if( updateNewPass1.length == 0 || updateNewPass2.length == 0 ) {
+   $('#settingsPassMessage').html("Looks like you missed one of the new password fields.").css("color","red").show();
+
+  } else if( !(updateNewPass1 === updateNewPass2) ) {
+   $('#settingsPassMessage').html("Your new passwords don't match.").css("color","red").show();
+  } else {
+   $.post('/processSettingsPass', updateInfoForm, function(callbackMsg) {
+    $('#settingsMessage').html(callbackMsg).show();
+   });
+  }
+ });
+}
+
 function woopraTest(){
 	$("#todaySection").hide();
 	$("#featuresPage").toggleClass("active");

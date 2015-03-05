@@ -19,6 +19,9 @@
     <script>
       $(document).ready(function () {
         $("#title").html("Tutorial 2");
+        $('#cancelButton').click(function(){
+          location.href = "homepage";
+        });
         $('#datepicker').datepicker({
           altFormat: "yyyy-mm-dd"
         });
@@ -31,30 +34,35 @@
 
 <body>
   {{> main_head}}
-  {{> breadCrumbs}}
   <div class="subContainer">
+    {{> breadCrumbs}}
+    <br>
+    <br>
     <div class="jumbotron">
       <div id = "tut_second">
-        <h1><center>Create your schedule!</center></h1>
-        <p>The way you create your schedule is by filling out the fields below for "Create Event." Once you fill out the fields and hit submit, you will be led to your calendar where you can view the events you added! The culmination of these events will form your weekly and/or monthly schedule. [A function that allows you to make these events repeatable, each week for example, is a stretch goal and will hopefully be implemented later.]</p>
+        <h3><center>Create your schedule!</center></h3>
+        <p>The way you create your schedule is by filling out the fields below. Once you fill out the fields and hit submit, you will be led to your calendar where you can view the events you added!</p>
       </div>
     </div> <!-- end of jumbotron -->
-
-    <h2>Create Event</h2>
+    <center>
     <form action="processNewEvent" method="post">      
       <input placeholder="Title" type="text" name="title" />*<br>
       <input placeholder="Date" type="text" id="datepicker" data-date-format="yyyy-mm-dd" name="date" />* <br> 
 
+      <br>
+      <br>
+
       Start Time
       <input type="text" name="timepickerStart" class="time_element"/>
-
+      <br>
       End Time
       <input type="text" name="timepickerEnd" class="time_element"/>
       
       <br>
-      <input type="submit" value="Submit">
-      <input type="button" value="Cancel">
+      <input type="submit" class="btn" value="Submit">
+      <input type="button" class="btn" value="Cancel" id="cancelButton">
     </form> 
+  </center>
   </div>
  
 </body>

@@ -22,7 +22,9 @@
       $(document).ready(function () {
         $("#title").html("Tutorial 4");
         $('#datepicker').datepicker();
-
+        $('#cancelButton').click(function(){
+          location.href = "homepage";
+        });
         $('.gruupUpCheckbox').children('input').prop("checked", 0);
 
         $('.gruupUpCheckbox').click( function () {
@@ -42,14 +44,13 @@
     {{> breadCrumbs}}
     <div class="jumbotron">
     <div id="tut_second">
-      <h1><center>GruupUp!</center></h1>
-      <p>Perfect! Now it's time to make your first GruupUp event. Select the friends you want to  group up with and click submit. Then you can create an
-        event based off of everyone's availablity on the selected day! Fill out the fields below and submit!</p>
+      <h3><center>GruupUp!</center></h3>
+      <p>Perfect! Now it's time to make your first GruupUp event. Select the friends you want to group up with and click submit to see available times.</p>
     </div>
     <div id="tut_first">
-      <h1><center>Connect with Gruupers</center></h1>
+      <h3><center>Connect with Gruupers</center></h3>
       <p> 
-        These are the major basics of the app. Feel free to use the app as you want and gruup up with friends with ease! If you ever find yourself needing more help, check out our help page in the menu bar above. Enjoy!</p>
+        These are the major basics of the app. Feel free to use it to gruup up with friends with ease! If you ever find yourself needing more help, check out our help page in the menu bar above. Enjoy!</p>
       <p><a class="btn btn-primary btn-lg" href="homepage" role="button">Get started!</a></p>
     </div>
     <nav>
@@ -75,8 +76,8 @@
         </div>
       {{/each}}
 
-      <input type="button" value="Submit" id="gruupUpSubmit">
-      <input type="button" value="Cancel">
+      <input type="button" class="btn" value="Submit" id="gruupUpSubmit">
+      <input type="button" class="btn" value="Cancel" id="cancelButton">
     </form> 
   </div>
  

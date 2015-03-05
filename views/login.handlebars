@@ -13,16 +13,15 @@
 <body>
   
   <div class="containerHeader">
-    <h1 id="title"><center>Welcome to Gruupster!</center></h1>
-    <h2 id="title"><center>Log In</center></h2>
+    <h2 id="title"><center>Welcome to <img src="images/Gruupster_Logo_2 copy2.png" alt="logo"/></center></h2>
   </div>
-
+<div id="loginPage">
+    <br>
+    
+    <h2><center>Log In</center></h2>
     <div>
         {{errMsg}}
     </div> 
-
-    <hr width="0">
-
     <form action="/processLogin" data-ajax="false" method="POST">
         <center>
             UCSD Email:<br>
@@ -31,12 +30,11 @@
             Password:<br>
             <input type="password" name="password">
             <hr width="0">
-            <input type="submit" value="Login">
-            <!--<input type="button" value="Forgot Password">-->
-            <a href="signup" data-ajax="false"><input type="button" value="Signup"></a>
+            <input type="submit" class="btn" value="Login">
+            <a href="signup" data-ajax="false"><input type="button" class="btn" value="Signup"></a>
         </center>
     </form>
- 
+ </div>
 </body>
 
 </html>

@@ -4,45 +4,31 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Gruupster</title>
+
     <link href="css/index.css" rel="stylesheet"></link>
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet"></link>
+
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="bootstrap/js/bootstrap.js"></script>
     <script src="javascript/breadCrumbs.js"></script>
     <script>
       $(document).ready(function () {
-        $("#title").html("Help");
+        $("#title").html("About");
       })
-    </script>  
+    </script> 
+
 </head>
 
 <body>
+    {{> main_head}}
 
-{{> main_head}}
-
-<div class="subContainer">
     {{> breadCrumbs}}
-</div>
 
-<div class="tutorialOptions">
-	<div>
-		<h3>Getting Started</h3>
-		<p>Tutorial #1: <a href="tutorialOne">Go</a> </p>
-	</div>
-	<div>
-		<h3>Create Event Assistance</h3>
-		<p>Tutorial #2: <a href="tutorialTwo">Go</a> </p>
-	</div>
-	<div>
-		<h3>Add Friend Assistance</h3>
-		<p>Tutorial #3: <a href="tutorialThree">Go</a> </p>
-	</div>
-	<div>
-		<h3>GruupUp Assistance</h3>
-		<p>Tutorial #4: <a href="tutorialFour">Go</a> </p>
-	</div>
-</div>    
- 	
+    <h1>About Us</h1>
+    <p> This application was designed and engineered by James, Kenny, and Steven.</p>
+
+    <h3> We would like to thank: </h3>
+    <div>Icons made by <a href="http://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>             is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
 </body>
 
-</html>	
+</html> 

@@ -1,12 +1,70 @@
 <div class="containerHeader">
     <div class="btn-group btn-group-lg">
       <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-        <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></button>
+      <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></button>
         <ul class="dropdown-menu" role="menu">
-          <li><a href="settings" class="list" data-ajax="false">Settings</a></li>
+          <li id='headerSettings'><a href="#" class='list' data-ajax="false">Settings</a></li>
           <li><a href="help" class="list" data-ajax="false">Help</a></li>
+          <li><a href="about" class="list" data-ajax="false">About</a></li>
           <li><a href="/" class="list" data-ajax="false">Logout</a></li>
         </ul>
-      </div>   
-      <center><h1 id="title"></h1></center> 
+    </div>   
+      <center><h1 id="title"></h1></center>
+</div>
+
+<div id="settingsModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="eventModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form action="updateUserInfo" method="post" id='updateSettingsForm'>
+        <div class="modal-header">
+          <center><h1>Settings</h1></center>
+        </div>
+        <div class="modal-body">      
+          <div class="accordion" id="accordion2">
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a class="accordion-toggle settingsButtons" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">Update First and Last Name</a>
+              </div>
+              <div id="collapseOne" class="accordion-body collapse">
+                <div class="accordion-inner">                  
+                  <p>First Name</p>
+                  <input type="text" name="updateFirstName">
+                  <p>Last Name</p>
+                  <input type="text" name="updateLastName">
+                  <p id='settingsNamesMessage'></p>
+                  <button type="button" class="btn btn-primary " value="Update" name="settingsUpdate" id='updateNamesButton'>Update</button>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a class="accordion-toggle settingsButtons" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">Change password</a>
+              </div>
+              <div id="collapseTwo" class="accordion-body collapse">
+                <div class="accordion-inner">
+                  <p>Enter current password</p>
+                  <input type="password" name="updateCurrPassword">
+                  <p>Enter new password</p>
+                  <div class="gruupUpCheckbox">
+                    <input type="password" class='settingsPassword' name="updateNewPassword1">
+                  </div>
+                  <p>Confirm new password</p>
+                  <div class="gruupUpCheckbox">
+                    <input type="password" class='settingsPassword' name="updateNewPassword2">
+                  </div>
+                  <p id='settingsPassMessage'></p>
+                  <button type="button" class="btn btn-primary " value="Update" name="settingsUpdate" id='updatePassButton'>Update</button>
+                </div>
+              </div>
+            </div>
+          </div>             
+        </div>
+        <div class="modal-footer">
+          <p id="settingsMessage"></p>
+          <button type="button" class="btn btn-info" data-dismiss="modal" aria-hidden="true">Close</button>          
+        </div>  
+      </form>
+    </div>
+  </div>
 </div>

@@ -26,10 +26,8 @@ exports.gruup = function(req, res){
 					.exec(function(err, foundFriend){
 						if(err){
 							addFriendMessage = "There was a problem accessing your friends list.";
-							//console.log("**************** IF 1");
 						}
 						else{
-							console.log("************ARRAY:   " + foundFriend);
 							if(friendsArr.length <= 0){
 								addFriendMessage = "No friend found. Go add some friends";
 							}
@@ -40,7 +38,9 @@ exports.gruup = function(req, res){
 							if(result[0].firstVisit == true){
 								res.render('tutorialThree', {"friends": foundFriend, "addFriendMessage": addFriendMessage});
 							}
-							else{	
+							else{
+							console.log("############");
+							console.log(foundFriend);	
 								res.render('gruupers', {"friends": foundFriend, "addFriendMessage": addFriendMessage});	
 							}						
 						}	
