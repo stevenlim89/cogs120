@@ -13,7 +13,6 @@
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="fullcalendar/lib/moment.min.js"></script> 
     <script src="fullcalendar/fullcalendar.js"></script>
-    <script src="javascript/breadCrumbs.js"></script>
     <script src="javascript/main.js"></script>
     <script src="javascript/calendar.js"></script>
     <script src="bootstrap/js/bootstrap.js"></script>
@@ -27,24 +26,14 @@
 
 <body>
   {{> main_head}}
-
-  <div class="subContainer">
-    <div class="btn-group btn-group-center" id="breadCrumbButtons">
-      <div class="container">
-        <button type="button" class="btn btn-primary" id="homeBC">Homepage</button>
-        <button type="button" class="btn btn-primary" id="gruupUpBC">GruupUp</button>
-        <button type="button" class="btn btn-primary" id="createEventBC">Create Event</button>
-      </div>
-    </div>
-  </div>
   <hr>
   <div class="jumbotron">
       <div id="tut_second">
-        <h1><center>View your event!</center></h1>
+        <h3><center>View your event!</center></h3>
         <p>Take a look at the calendar for the event you just submitted. By repeating this process, you can create your weekly schedule.</p>
       </div>
       <div id="tut_first">
-        <h1><center>Use of Schedule</center></h1>
+        <h3><center>Use of Schedule</center></h3>
         <p>Through your schedule, we can compare it with your friend's schedules when you create an event to find the optimal time(s) to meet with them! Before we create an event, we need to add a friend first.</p>
         <p><a class="btn btn-primary btn-lg" href="tutorialThree" role="button">Learn More</a></p>
       </div>

@@ -16,9 +16,14 @@ function woopraTutorialTest(){
 	}else{
 	    $("#skipButton2").hide();
 	}
-	$("#skipButton1").click(function(){
+	$("#ceButton").click(function(){
 		woopra.track("skip_button_one");
 		window.location = 'tutorialTwo';
+		return false;
+	});
+	$("#skipButton1").click(function(){
+		woopra.track("skip_button_one");
+		window.location = 'homepage';
 		return false;
 	});
 
