@@ -4,7 +4,8 @@ $(document).ready(function () {
 
 function initializeElements(){
 	$('#datepicker').datepicker({
-          altFormat: "yyyy-mm-dd"
+          altFormat: "yyyy-mm-dd",
+          readOnly: "true"
     });
 
     $(".time_element").timepicki({

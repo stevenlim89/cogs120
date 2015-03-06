@@ -18,7 +18,7 @@
 			step_size_hours: '1',
 			step_size_minutes: '1',
 			overflow_minutes: false,
-			disable_keyboard_mobile: false,
+			disable_keyboard_mobile: true,
 			reset: false
 		};
 
