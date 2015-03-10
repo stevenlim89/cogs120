@@ -34,14 +34,14 @@ h1, h2, h3 {
  text-decoration: none;
  color: white;
  opacity: none;
-    font-family: "fjalla one";
-    font-size: 30px;
-    font-weight: 100px;
-    text-transform: uppercase;
-    display:inline;
-    float:right;
-    padding-top: 3%;
-    padding-right: 1%;
+ font-family: "fjalla one";
+ font-size: 30px;
+ font-weight: 100px; 
+ text-transform: uppercase;
+ display:inline;
+ float:right;
+ padding-top: 3%;
+ padding-right: 1%;
 }
 
 
@@ -355,8 +355,4 @@ section.icon img{
 
 .deleteFriend{
  float: right;
-}
-
-.iconTop{
- padding-bottom: 10%;
 }
