@@ -6,8 +6,7 @@
     <title>Gruupster</title>
 
     <link href="fullcalendar/fullcalendar.css" rel="stylesheet"/>
-    <link href="css/index.css" rel="stylesheet"></link>
-    <link href="bootstrap/css/bootstrap.css" rel="stylesheet"></link>
+    {{> css_partials}}
 
     <script src="fullcalendar/lib/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery.js"></script>
@@ -27,9 +26,9 @@
 <body>
   {{> main_head}}
     <div class="btn-group btn-group-justified" id="breadCrumbButtons">
-      <button type="button" class="btn btn-primary" id="homeBC">Homepage</button>
-      <button type="button" class="btn btn-primary" id="gruupUpBC">GruupUp</button>
-      <button type="button" class="btn btn-primary" id="createEventBC">Create Event</button>
+      <button type="button" class="btn btn-primary" id="homeBC"><img src="images/homeBC.png" alt="Home"/></button>
+      <button type="button" class="btn btn-primary" id="gruupUpBC"><img src="images/gruupUpBC.png" alt="Home"/></button>
+      <button type="button" class="btn btn-primary" id="createEventBC"><img src="images/createEventBC.png" alt="Create Event"/></button>
     </div>
   <hr>
 

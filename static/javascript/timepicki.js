@@ -33,10 +33,10 @@
 			var ele_par = $(this).parents(".time_pick");
 
 			// developer can specify which arrow makes the numbers go up or down
-			var top_arrow_button = (settings.increase_direction === 'down') ?
+			var top_arrow_button = (settings.increase_direction === 'up') ?
 				"<div class='prev action-prev'></div>" :
 				"<div class='prev action-next'></div>";
-			var bottom_arrow_button = (settings.increase_direction === 'down') ?
+			var bottom_arrow_button = (settings.increase_direction === 'up') ?
 				"<div class='next action-next'></div>" :
 				"<div class='next action-prev'></div>";
 

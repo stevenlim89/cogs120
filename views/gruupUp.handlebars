@@ -4,8 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Gruupster</title>
-    <link href="css/index.css" rel="stylesheet"></link>
-    <link href="bootstrap/css/bootstrap.css" rel="stylesheet"></link>
+    {{> css_partials}}
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
     <link href="fullcalendar/fullcalendar.css" rel="stylesheet"/>
 
@@ -44,12 +43,12 @@
 <body>
   {{> main_head}}
   
-  <div class="subContainer">
+ <div class="subContainer">
     <div class="btn-group btn-group-center" id="breadCrumbButtons">
       <div class="containerBC">
-        <button type="button" class="btn btn-primary" id="homeBC">Homepage</button>
-        <button type="button" class="btn btn-primary" id="createEventBC">Create Event</button>
-        <button type="button" class="btn btn-primary" id="calBC">Calendar</button>
+        <button type="button" class="btn btn-primary" id="homeBC"><img src="images/homeBC.png" alt="Home"/></button>
+        <button type="button" class="btn btn-primary" id="createEventBC"><img src="images/createEventBC.png" alt="Create Event"/></button>
+        <button type="button" class="btn btn-primary" id="calBC"><img src="images/calBC.png" alt="Calendar"/></button>
       </div>
   </div>
     
