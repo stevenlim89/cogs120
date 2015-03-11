@@ -17,13 +17,16 @@
     <div class="modal-content">
       <form action="updateUserInfo" method="post" id='updateSettingsForm'>
         <div class="modal-header">
+          <button type="button" class="btn btn-info" data-dismiss="modal" aria-hidden="true">
+            <span class="glyphicon glyphicon-remove"></span>
+          </button>
           <center><h1>Settings</h1></center>
         </div>
         <div class="modal-body">      
           <div class="accordion" id="accordion2">
             <div class="accordion-group">
               <div class="accordion-heading">
-                <a class="accordion-toggle settingsButtons" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">Update First and Last Name</a>
+                <a class="accordion-toggle settingsButtons" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne"><strong>Update First and Last Name</strong></a>
               </div>
               <div id="collapseOne" class="accordion-body collapse">
                 <div class="accordion-inner">                  
@@ -39,7 +42,7 @@
             <br>
             <div class="accordion-group">
               <div class="accordion-heading">
-                <a class="accordion-toggle settingsButtons" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">Change password</a>
+                <a class="accordion-toggle settingsButtons" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo"><strong>Change password</strong></a>
               </div>
               <div id="collapseTwo" class="accordion-body collapse">
                 <div class="accordion-inner">
@@ -62,7 +65,7 @@
         </div>
         <div class="modal-footer">
           <p id="settingsMessage"></p>
-          <button type="button" class="btn btn-info" data-dismiss="modal" aria-hidden="true">Close</button>          
+                    
         </div>  
       </form>
     </div>

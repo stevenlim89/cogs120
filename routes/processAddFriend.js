@@ -45,36 +45,40 @@ exports.add = function(req, res){
 				}    
 			}
 		}
-		//res.render('gruupers');
-		
 	}	
 }
 
 exports.deleteFriend = function(req, res){
 	var data = req.body;
-	var newFriendList = [];
-
+	console.log("^^^^^^^^^^^^^");
+	console.log(data);
 	var Model = mongoose.model('Project', models.ProjectSchema);
 
-	Model.findOne({email: req.session.loginInfo}, function(err, doc){
-		for(var i = 0; i < doc.friend_array.length; i++){
-			if(data.friendEmail == doc.friend_array[i]){
-				doc.friend_array.splice(i, 1);
-				newFriendList = doc.friend_array;	
-				doc.save(function(err){
-					if(err){
-						console.log(err);
+	models.Project
+		.find({"email": req.session.loginInfo})
+		.exec(findAndDeleteFriend);
+
+	function findAndDeleteFriend(err, result){
+		if(err){
+			console.log("**************** IF 3");
+		}
+		else{
+			Model.findOne({email: result[0].email}, function(err, doc){
+				for(var i = 0; i < doc.friend_array.length; i++){
+					if(data.friendEmail == doc.friend_array[i]){
+						doc.friend_array.splice(i, 1);	
+						doc.save(function(err){
+							if(err){
+								console.log(err);
+							}
+							else{
+								res.render('gruupers');
+							}
+						});
+						break;
 					}
-					else{
-						var addFriendMessage = "Friend Deleted";
-						models.Project
-							.find({"$or": [{"email": {"$in": newFriendList}}] })
-							.exec(function(err, foundFriend){
-								res.render('gruupers', {"friends": foundFriend});
-							});
-					}	
-				});
-			}
-		}	
-	});
+				}	
+			});
+		}
+	}	
 }	

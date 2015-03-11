@@ -1,30 +1,33 @@
 $(document).ready(function() {
     initializeBreadCrumbs();
-	initializePage();
+    initializePage();
     calculateEvents();
 })
 
 function initializePage() {
-	var date = new Date();
+    var date = new Date();
     var d = date.getDate();
     var m = date.getMonth();
     var day = date.getDay();
     var split;
     var split2;
- 	var userEvents;
+    var userEvents;
+
+    $('#calculatedMessage').hide();
+
     $.get('/putEvents', callback);
 
     function callback(result){
-    	
+        
         userEvents = result;
 
-		for(var i = 0; i < result.length; i++){
+        for(var i = 0; i < result.length; i++){
             split = result[i].start.split('-');
             split2 = result[i].end.split('-');
-			userEvents[i] = result[i];
-		}    
+            userEvents[i] = result[i];
+        }    
 
-		$('#calendar').fullCalendar({
+        $('#calendar').fullCalendar({
             header: {
                 left: 'prev,next',
                 center: 'title',
@@ -80,20 +83,25 @@ function initializeBreadCrumbs(){
 function calculateEvents(){
     $('#gruupUpSubmit').click(function(e){
         e.preventDefault();
+
+        if( ($('input#datepicker.hasDatepicker').val()).length == 0 ) {
+            var gruupUpPulseCtr1 = 0
+            $('#gruupUpAlert').text( "Don't forget the date.." ).show().fadeOut(6000);
+            pulse($('.gruupUpForm>input.hasDatepicker'));
+            while( gruupUpPulseCtr1 < 2 ) {
+              pulse($('.gruupUpGruupers'));
+            }
+            return;
+        }      
+
         if( $('input:checked').length <= 0 ) {
             var gruupUpPulseCtr = 0;
             $('#gruupUpAlert').text( "Don't forget to add friends.." ).show().fadeOut(6000);
             while( gruupUpPulseCtr < 2 ) {
-              pulse();
+              pulse($('.gruupUpGruupers'));
             }
             return;
-        }        
-
-        function pulse(gruupUpPulseElement){
-          $('.gruupUpCheckbox').delay(700).animate({'border-color':'Red'}, 100)
-          .delay(700).animate({'border-color': 'Transparent'}, 100);
-          gruupUpPulseCtr++;
-        }
+        }          
 
         var dateFromForm = $('#gruupUpForm').serializeArray();
 
@@ -106,6 +114,8 @@ function calculateEvents(){
             var timeArray = new Array(50);
             var indexStart;
             var indexEnd;
+
+            $()
 
             for(var z = 0; z < 50; z++){
                 timeArray[z] = 0;
@@ -139,35 +149,42 @@ function calculateEvents(){
                     title: "unavailable"
                 }]
             */
-            convertedTimeArray = showEventsModal(data[data.length - 1], timeArray);
+            
 
-            $('#gruupUpCalendar').fullCalendar({
-                header: {  
-                    left: 'none',
-                    center: 'title',
-                    right: 'none'
-                },
-                defaultDate: data[data.length - 1],
-                defaultView: 'agendaDay',                
-                selectable: true,
-                selectHelper: true,
-                select: function(start, end) {
-                    var title = prompt("Event Title:\n**Persistence to self and friends' schedules, coming soon...");
-                    var eventData;
-                    if (title) {
-                        eventData = {
-                            title: title,
-                            start: start,
-                            end: end
-                        };
-                        $('#gruupUpCalendar').fullCalendar('renderEvent', eventData, true); // stick? = true
-                    }
-                    $('#gruupUpCalendar').fullCalendar('unselect');
-                },
-                editable: true,
-                eventLimit: true,                
-                events: convertedTimeArray
-            });
+            $('#gruupUpForm').slideUp("slow", function() {
+                $('#calculatedMessage').slideDown("slow");
+
+                convertedTimeArray = showEventsModal(data[data.length - 1], timeArray);
+
+                $('#gruupUpCalendar').fullCalendar({                    
+                    header: {  
+                        left: 'none',
+                        center: 'title',
+                        right: 'none'
+                    },
+                    defaultDate: data[data.length - 1],
+                    defaultView: 'agendaDay',                
+                    selectable: true,
+                    selectHelper: true,
+                    select: function(start, end) {
+                        var title = prompt("Event Title:\n**Persistence to self and friends' schedules, coming soon...");
+                        var eventData;
+                        if (title) {
+                            eventData = {
+                                title: title,
+                                start: start,
+                                end: end
+                            };
+                            $('#gruupUpCalendar').fullCalendar('renderEvent', eventData, true); // stick? = true
+                        }
+                        $('#gruupUpCalendar').fullCalendar('unselect');
+                    },
+                    editable: true,
+                    eventLimit: true,
+                    allDaySlot: false,
+                    events: convertedTimeArray
+                });
+            }); // gruupUpContent
         });
     });
 }
@@ -256,4 +273,10 @@ function convertIndexToTime( currIndex ) {
 
     return convertedTime;
 
+}
+
+function pulse(gruupUpPulseElement){
+  gruupUpPulseElement.delay(700).animate({'border-color':'Red'}, 100)
+  .delay(700).animate({'border-color': 'Transparent'}, 100);
+  gruupUpPulseCtr++;
 }

@@ -15,6 +15,7 @@
     <script src="http://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>    
     <script src="javascript/calendar.js"></script>
     <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="javascript/main.js"></script>
 
     <script>
       $(document).ready(function () {
@@ -23,17 +24,27 @@
           location.href = "homepage";
         });
         $('#datepicker').datepicker();
-        $('.gruupUpCheckbox').children('input').prop("checked", 0);
+        $('.gruupUpCheckbox').children('center').prop("checked", 0);
 
         $('#addNewFriends').click( function () {
           location.href = "gruupers";
         });
 
+        $('.gruupUpGruupers').click( function () {          
+          $(this).toggleClass('element-selected');
+        });
+
         $('.gruupUpCheckbox').click( function () {
           var gruupUpBoxes = $(this).children('input');
           gruupUpBoxes.prop("checked", !gruupUpBoxes.prop("checked"));
-          $(this).toggleClass('element-selected');
+        });
 
+        $('.gruupUpCheckbox>input').hide();
+
+        $('#gruupUpClose').click(function () {
+          $('#calculatedMessage').slideUp("slow", function () {
+            $('#gruupUpForm').slideDown("slow");
+          });          
         });
       })
     </script>
@@ -52,9 +63,10 @@
       </div>
   </div>
     
-    {{#if listOfFriends}}
-    <div id="gruupUpContent">
-      <form action="processGruupUp" method="post" id="gruupUpForm">
+    <div>
+     {{#if listOfFriends}}
+      <div id="gruupUpContent">
+        <form action="processGruupUp" method="post" id="gruupUpForm">
 
         Select Date
         <input placeholder="Date" type="text" id="datepicker" data-date-format="mm/dd/yyyy" name="date"> *              
@@ -66,24 +78,32 @@
 
         {{#each listOfFriends}}
         <div class="gruupUpCheckbox">
-          <input type="checkbox" name="{{email}}" value="{{email}}" class="selectedFriends visibility-none"><center><label for="{{email}}">{{firstname}} {{lastname}}</label></center>
+            <input type="checkbox" name="{{email}}" value="{{email}}" class="visibility-none">
+            <center class="gruupUpGruupers"><label for="{{email}}">{{firstname}} {{lastname}}</label></center>            
         </div>
         {{/each}}
         <br>
         <input type="button" value="Submit" id="gruupUpSubmit">
         <input type="button" value="Cancel" id="cancelButton">
+        <p>* = required</p>
+        <span id="gruupUpAlert"></span>
       </form> 
-      <p>* = required</p>
-      <span id="gruupUpAlert"></span> 
-  {{else}}
+       
+      {{else}}
       <div>
         <p> To GruupUp, you're going to need some friends! </p>
         <button id="addNewFriends">Add Friend now!</button>
       </div>
       </div>
-      {{/if}} 
-      <div id="gruupUpCalendar"></div>
+      {{/if}}   
+      <div id="calculatedMessage">
+        <p>Here's the free time that we calculated for you and your friends!</p> 
+        <div id="gruupUpCalendar"></div>
+        <br>
+        <button id="gruupUpClose">Back</button>
+      </div>
  
+ </div>
 </body>
 
 </html>

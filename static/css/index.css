@@ -304,7 +304,7 @@ a:hover
      cursor:pointer;  
 }
 
-.gruupUpCheckbox{
+.gruupUpGruupers{
  border: 1px solid Transparent;
 }
 
@@ -321,8 +321,34 @@ a:hover
  color: white;
 }
 
+.modal-header{
+    position: relative;
+    color: white;
+    background-color: #2c3e50;
+}
+
+.modal-body {
+    background-color: #F2F2F2;
+}
+
+.modal-body .settingsButtons {
+    font-size: 18px;
+}
+
 .modal-footer > .btn{
  color: white;
+}
+
+div.accordion-heading {
+    padding: 3px;
+    border: 2px solid #2c3e50;
+    border-radius: 10px;
+    background-color: white;
+}
+
+div.accordion-inner{
+    background-color: white;
+    padding: 15px;
 }
 
 .icon {
