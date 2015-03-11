@@ -28,7 +28,7 @@ exports.signup = function(req, res){
        }
           
        else{
-        res.render('signup', {errMsg: "Email exists already"});   
+        res.render('signup', {errMsg: "Email exists already. Please enter another one."});   
        }
              
     }

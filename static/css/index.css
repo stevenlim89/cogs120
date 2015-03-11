@@ -1,3 +1,6 @@
+html{
+    height: 100%;
+}
 body {
  border: 0;
  max-width: 800px;
@@ -5,6 +8,8 @@ body {
  margin: 0 auto;
  font-family: lato;
  font-size: 14px;
+ position: relative;
+ height: 100%;
 }
 
 button {
@@ -83,6 +88,7 @@ h1, h2, h3 {
  display: inline-block;
  opacity: .6;
  background-repeat: no-repeat;
+ position: relative;
  z-index: 50;
 }
 
@@ -352,10 +358,11 @@ div.accordion-inner{
 }
 
 .icon {
- background-color: white;
+
  height: 0;
  display: inline-block;
  margin-top: 5%;
+
 }
 
 .iconLeft {
@@ -381,4 +388,9 @@ section.icon img{
 
 .deleteFriend{
  float: right;
+}
+
+#homePage{
+    background-image: url(../images/texture.jpg);
+    height: 100%;
 }
