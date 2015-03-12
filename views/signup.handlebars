@@ -4,42 +4,44 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Signup</title>
-    <link href="css/index.css" rel="stylesheet"></link>
-    <link href="bootstrap/css/bootstrap.css" rel="stylesheet"></link>
+    {{> css_partials}}
 
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="bootstrap/js/bootstrap.js"></script>
 </head>
 
 <body>
+  <div id="loginBodyColor">
   <div class="containerHeader">
-    <center><img src="images/logo.png" alt="logo"/></center>
-  </div>  
+    <center><img src="images/newlogo.png" alt="logo"/></center>
+  </div> 
      <div>
         {{errMsg}}
     </div> 
     <form action="/newPost" method="POST">
-        <center>
+        <center id="loginBodyText">SIGN UP</center>
+        <center id="loginBody">
         <hr width="0">
-        First Name:<br>
+        <center id="loginBodySpacing">First Name:</center>
         <input type="text" name="firstname">
         <br>
-        Last Name:<br>
+        <center id="loginBodySpacing">Last Name:</center>
         <input type="text" name="lastname">
         <br>
-        UCSD Email:<br>
+        <center id="loginBodySpacing">UCSD Email:</center>
         <input type="text" name="ucsdemail">
         <br>
-        Password:<br>
+        <center id="loginBodySpacing">Password:</center>
         <input type="password" name="password">
         <br>
-        Confirm Password:<br>
+        <center id="loginBodySpacing">Confirm Password:</center>
         <input type="password" name="confirm_password">
         <hr width="0">
-        <input type="submit" class="btn" value="Create">
-        <a href="/" data-ajax="false"><input type="button" class="btn" value="Cancel"></a>
+        <input type="submit" class="btn btn-login" value="Create">
+        <a href="/" data-ajax="false"><input type="button" class="btn btn-login" value="Cancel"></a>
     </center>
     </form>
+</div>
 </body>
 
 </html>

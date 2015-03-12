@@ -1,57 +1,119 @@
-html{
+html {
     height: 100%;
 }
+
+
 body {
- border: 0;
- max-width: 800px;
- min-width: 300px;
- margin: 0 auto;
- font-family: lato;
- font-size: 14px;
- position: relative;
- height: 100%;
+    height: 100%;
+    position: relative;
+    border: 0;
+    margin: 0 auto;
+    font-family: lato;
+    font-size: 14px;
 }
 
+
 button {
- font-family: lato;
- font-size: 14px;
+    font-family: lato;
+    font-size: 14px;
 }
 
 h1, h2, h3 {
- font-family: lato;
- font-weight: bold;
+    font-family: lato;
+    font-weight: bold;
+}
+
+p {
+    font-size: 14px;
+}
+
+#tut_second {
+    font-size: 14px;
+}
+
+#tut_first {
+    font-size: 14px;
 }
 
 .containerHeader{
- width: 100%;
- background-color: #2c3e50;
- padding: 10px;
- float:right;
+    width: 100%;
+    background-color: #2c3e50;
+    padding: 10px;
+    float:right;
+}
+
+#containerHeaderLogin{
+    width: 100%;
+    padding: 10px;
+}
+
+#titleLogin{
+    text-decoration: none;
+    color: white;
+    opacity: none;
+    font-family: "fjalla one";
+    font-size: 60px;
+    font-weight: 100px;
+    text-transform: uppercase;
+}
+
+#titleLoginSmaller{
+    text-decoration: none;
+    color: white;
+    opacity: none;
+    font-family: "fjalla one";
+    font-size: 40px;
+    font-weight: 100px;
+    text-transform: uppercase;
 }
 
 #loginPage{
- background-image: url('../images/friends.jpg');
- opacity: .6;
- height: 100%;
+    
+    height: 100%;
+}
+
+#loginBodyColor {
+    margin: 0 auto;
+    font-family: lato;
+    font-size: 14px;
+    background-color: #2c3e50;
+    height: 100%;
+}
+
+#loginBody {
+    font-family: lato;
+    font-size: 16px;
+}
+
+#loginBodyText {
+    font-family: lato;
+    font-size:20px;
+    font-weight: bold;
+    color: white;
+}
+
+#loginBodySpacing {
+    margin-top: 2%;
+    color: white;
 }
 
 #title, #title:hover{
- text-decoration: none;
- color: white;
- opacity: none;
- font-family: "fjalla one";
- font-size: 30px;
- font-weight: 100px; 
- text-transform: uppercase;
- display:inline;
- float:right;
- padding-top: 3%;
- padding-right: 1%;
+    text-decoration: none;
+    color: white;
+    opacity: none;
+    font-family: "fjalla one";
+    font-size: 30px;
+    font-weight: 100px;
+    text-transform: uppercase;
+    display:inline;
+    float:right;
+    padding-top: 3%;
+    padding-right: 1%;
 }
 
 
 #title-navbar {
- width:100%;/*adjust this value to your needs*/
+    width:100%;/*adjust this value to your needs*/
     max-width: 200px;/* so it wont get bigger and pixelated*/
     height:auto;
     padding: 5%;
@@ -59,248 +121,251 @@ h1, h2, h3 {
 }
 
 .subContainer{
- width: 100%;
- height: 50px;
- display: inline;
+    width: 100%;
+    height: 50px;
+    display: inline;
 }
 
 #menu-right-float {
- float: left;
- font-family: lato;
- font-size: 16px;
- font-weight: bold;
- padding: 7% 0; 
+    float: left;
+    font-family: lato;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 7% 0;  
+}
+
+.btn-login {
+    color: #337ab7;
 }
 
 .btn .btn-default .dropdown-toggle{
- font-family: lato;
- font-size: 16px;
- font-weight: bold;
+    font-family: lato;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 .btn{
- font-family: lato;
- font-weight: bold;
+    font-family: lato;
+    font-weight: bold;
 }
 
 .squares{
- padding: 3%;
- display: inline-block;
- opacity: .6;
- background-repeat: no-repeat;
- position: relative;
- z-index: 50;
+    padding: 3%;
+    display: inline-block;
+    opacity: .6;
+    background-repeat: no-repeat;
+    z-index: 50;
 }
 
 
 .squareButtonsLeft, .squareButtonsRight{
- background-color: white;
- height: 0;
- width: 40%;
- border-width: 5px;
- border-radius: 5px;
- border-color: #1F555D;
- border-style: solid;
- padding-bottom: 40%;
- margin-bottom: 20%;
- z-index: 80;
+    background-color: white;
+    height: 0;
+    width: 40%;
+    border-width: 5px;
+    border-radius: 5px;
+    border-color: #1F555D;
+    border-style: solid;
+    padding-bottom: 40%;
+    margin-bottom: 20%;
+    z-index: 80;
 }
 
 .squares p{
- font-size: 25%;
+    font-size: 25%;
 }
 .squareButtonsRight{
- float: right;
+    float: right;
 }
 
 .squareButtonsLeft{
- float: left; 
+    float: left;    
 }
 
 .squares .glyphicon{
- font-size: 275%;
- margin-right: 10%;
+    font-size: 275%;
+    margin-right: 10%;
 }
 
 
 #createSquare, #calSquare{
- padding: 50%;
- display: inline-block;
- vertical-align: bottom;
+    padding: 50%;
+    display: inline-block;
+    vertical-align: bottom;
 }
 
 #editSquare, #friendSquare{
- padding: 50%;
- display: inline-block;
- vertical-align: bottom;
+    padding: 50%;
+    display: inline-block;
+    vertical-align: bottom;
 }
 
 #editSched{
- width: 20%;
- float: left;
- background-color: #6AC3FF;
- color: white;
- font: helvetica;
- text-decoration: none;
+    width: 20%;
+    float: left;
+    background-color: #6AC3FF;
+    color: white;
+    font: helvetica;
+    text-decoration: none;
 }
 
 #Calendar, #createEvent{
- width: 20%;
- float: right;
- text-decoration: none;
+    width: 20%;
+    float: right;
+    text-decoration: none;
 }
 
 #friends{
- width: 50%;
- float: left;
- margin: 10px 0 10px 0;
- background-color: #1F555D;
- color: white;
- font: helvetica;
- text-decoration: none;
+    width: 50%;
+    float: left;
+    margin: 10px 0 10px 0;
+    background-color: #1F555D;
+    color: white;
+    font: helvetica;
+    text-decoration: none;
 } 
 
 #groups{
- width: 50%;
- float: right;
- margin: 10px 0 10px 0;
- background-color: #1F555D;
- color: white;
- font: helvetica;
- text-decoration: none;
+    width: 50%;
+    float: right;
+    margin: 10px 0 10px 0;
+    background-color: #1F555D;
+    color: white;
+    font: helvetica;
+    text-decoration: none;
 }
 
 .toggle_bar {
- border: 1px solid #1F555D;
+    border: 1px solid #1F555D;
 }
 
 .myPanel {
- margin: 3%;
- width: 50%;
- margin-left: 7%;
+    margin: 3%;
+    width: 50%;
+    margin-left: 7%;
 }
 
 .myPanel .heading {
- color: black;
- padding: 5px 5px;
+    color: black;
+    padding: 5px 5px;
 }
 
 .myPanel .body {
- padding: 5px 5px;
+    padding: 5px 5px;
 }
 
 
 .ti_tx,
 .mi_tx,
 .mer_tx {
- width: 100%;
- text-align: center;
- margin: 10px 0;
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
 }
 
 .time,
 .mins,
 .meridian {
- width: 60px;
- float: left;
- margin: 0 10px;
- font-size: 20px;
- color: #2d2e2e;
- font-family: arial;
- font-weight: 700;
+    width: 60px;
+    float: left;
+    margin: 0 10px;
+    font-size: 20px;
+    color: #2d2e2e;
+    font-family: arial;
+    font-weight: 700;
 }
 
 .prev,
 .next {
- cursor: pointer;
- padding: 18px;
- width: 28%;
- border: 1px solid #ccc;
- margin: auto;
- background: url(../images/arrow.png) no-repeat;
- border-radius: 5px;
+    cursor: pointer;
+    padding: 18px;
+    width: 28%;
+    border: 1px solid #ccc;
+    margin: auto;
+    background: url(../images/arrow.png) no-repeat;
+    border-radius: 5px;
 }
 
 .prev:hover,
 .next:hover {
- background-color: #ccc;
+    background-color: #ccc;
 }
 
 .next {
- background-position: 50% 150%;
+    background-position: 50% 150%;
 }
 
 .prev {
- background-position: 50% -50%;
+    background-position: 50% -50%;
 }
 
 .time_pick {
- position: relative;
+    position: relative;
 }
 
 .timepicker_wrap {
- padding: 10px;
- border-radius: 5px;
- z-index: 998;
- display: none;
- box-shadow: 2px 2px 5px 0 rgba(50,50,50,0.35);
- background: #f6f6f6;
- border: 1px solid #ccc;
- float: left;
- position: absolute;
- top: 27px;
- left: 0;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 998;
+    display: none;
+    box-shadow: 2px 2px 5px 0 rgba(50,50,50,0.35);
+    background: #f6f6f6;
+    border: 1px solid #ccc;
+    float: left;
+    position: absolute;
+    top: 27px;
+    left: 0;
 }
 
 .arrow_top {
- position: absolute;
- top: -10px;
- left: 20px;
- background: url(images/top_arr.png) no-repeat;
- width: 18px;
- height: 10px;
- z-index: 999;
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    background: url(images/top_arr.png) no-repeat;
+    width: 18px;
+    height: 10px;
+    z-index: 999;
 }
 input.timepicki-input {
- background: none repeat scroll 0 0 #FFFFFF;
-     border: 1px solid #CCCCCC;
-     border-radius: 5px 5px 5px 5px;
-     float: none;
-     margin: 0;
-     text-align: center;
-     width: 70%;
+    background: none repeat scroll 0 0 #FFFFFF;
+        border: 1px solid #CCCCCC;
+        border-radius: 5px 5px 5px 5px;
+        float: none;
+        margin: 0;
+        text-align: center;
+        width: 70%;
 }
 a.reset_time {
- float: left;
- margin-top: 5px;
- color: #000;
+    float: left;
+    margin-top: 5px;
+    color: #000;
 }
 
 #breadCrumbButtons{
- width: 100%; 
+    width: 100%; 
 }
 
 #homeBC, #gruupUpBC, #calBC, #createEventBC{
- font-size: inherit;
- font-family: inherit;
- width: 30%;
- margin: 1%;
- font-color: white;
- font-family: lato;
- font-size: 14px;
- font-weight: bold;
+    font-size: inherit;
+    font-family: inherit;
+    width: 30%;
+    margin: 1%;
+    font-color: white;
+    font-family: lato;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 #homeBC {
- margin-left: 3%;
+    margin-left: 3%;
 }
 
 #createEventBC{
- padding-right: 4%;
+    padding-right: 4%;
 }
 
 a{
- color: inherit;
+    color: inherit;
     text-decoration: none;
 }
 a:hover 
@@ -310,75 +375,47 @@ a:hover
      cursor:pointer;  
 }
 
-.gruupUpGruupers{
- border: 1px solid Transparent;
+.gruupUpCheckbox{
+    border: 1px solid Transparent;
 }
 
 #gruupUpContent{
- padding: 20px;
+    padding: 20px;
 }
 
 .visibility-none {
- visibility: hidden;
+    visibility: hidden;
 }
 
 .element-selected{
- background-color: #009999;
- color: white;
-}
-
-.modal-header{
-    position: relative;
+    background-color: #009999;
     color: white;
-    background-color: #2c3e50;
-}
-
-.modal-body {
-    background-color: #F2F2F2;
-}
-
-.modal-body .settingsButtons {
-    font-size: 18px;
 }
 
 .modal-footer > .btn{
- color: white;
-}
-
-div.accordion-heading {
-    padding: 3px;
-    border: 2px solid #2c3e50;
-    border-radius: 10px;
-    background-color: white;
-}
-
-div.accordion-inner{
-    background-color: white;
-    padding: 15px;
+    color: white;
 }
 
 .icon {
-
- height: 0;
- display: inline-block;
- margin-top: 5%;
-
+    height: 0;
+    display: inline-block;
+    margin-top: 5%;
 }
 
 .iconLeft {
- float: left;
- width: 50%;
- margin-bottom: 20%;
+    float: left;
+    width: 50%;
+    margin-bottom: 20%;
 }
 
 .iconRight {
- float: right;
- width: 50%;
- margin-bottom: 20%;
+    float: right;
+    width: 50%;
+    margin-bottom: 20%;
 }
 
 section.icon img{
- height: 150px;
+    height: 150px;
 }
 
 @font-face {
@@ -387,8 +424,13 @@ section.icon img{
 }
 
 .deleteFriend{
- float: right;
+    float: right;
 }
+
+.iconTop{
+    padding-bottom: 10%;
+}
+
 
 #homePage{
     background-image: url(../images/texture.jpg);
