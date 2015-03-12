@@ -11,19 +11,9 @@ function woopraTutorialTest(){
 
 	var random_num = Math.random();
 
-	if(random_num > 0.5){
-	    $("#skipButton1").hide();
-	}else{
-	    $("#skipButton2").hide();
-	}
 	$("#ceButton").click(function(){
 		woopra.track("skip_button_one");
 		window.location = 'tutorialTwo';
-		return false;
-	});
-	$("#skipButton1").click(function(){
-		woopra.track("skip_button_one");
-		window.location = 'homepage';
 		return false;
 	});
 
