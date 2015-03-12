@@ -52,6 +52,7 @@
 						top_arrow_button +
 						"<div class='mi_tx'><input type='text' class='timepicki-input'" + (settings.disable_keyboard_mobile ? "readonly" : "") + "></div>" +
 						bottom_arrow_button +
+						"<button type='button' class='btn btn-info timepickerButton' aria-hidden='true'>" + "<span>ok</span></button>" +
 					"</div>");
 			if(settings.show_meridian){
 				new_ele.append(
@@ -70,6 +71,10 @@
 			var ele_next_all_child = ele_next.find("div");
 			var inputs = ele_par.find('input');
 			
+			$('.timepickerButton').click(function(){
+    			close_timepicki();
+    		});
+
 			$('.reset_time').on("click", function(event) {
 				ele.val("");
 				close_timepicki();
