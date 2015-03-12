@@ -53,6 +53,7 @@ function initializePage() {
             editable: true,
             weekMode: 'liquid',
             url: '#',
+            allDaySlot: false,
             events: userEvents
         });
     }

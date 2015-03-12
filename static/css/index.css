@@ -435,3 +435,7 @@ section.icon img{
     background-image: url(../images/texture.jpg);
     height: 100%;
 }
+
+.errMessage{
+    color: white;
+}

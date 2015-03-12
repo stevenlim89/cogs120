@@ -12,13 +12,11 @@ function woopraTutorialTest(){
 	var random_num = Math.random();
 
 	$("#ceButton").click(function(){
-		woopra.track("skip_button_one");
 		window.location = 'tutorialTwo';
 		return false;
 	});
 
 	$("#skipButton2").click(function(){
-		woopra.track("skip_button_two");
 		window.location = 'homepage';
 		return false;
 	});
